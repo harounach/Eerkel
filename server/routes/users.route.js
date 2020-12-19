@@ -17,4 +17,8 @@ router.route("/updateAccount").get((req, res) => {
   res.json({ message: "Your account has been updated" });
 });
 
+router.route("/removeAccount").get((req, res) => {
+  res.json({ message: "Your account has been removed" });
+});
+
 module.exports = router;
