@@ -1,24 +1,15 @@
 const { Router } = require("express");
 const router = Router();
+const usersController = require("../controllers/users.controller");
 
-router.route("/signin").get((req, res) => {
-  res.json({ message: "Congratulations! user are signin" });
-});
+router.route("/signin").get(usersController.signin);
 
-router.route("/signup").get((req, res) => {
-  res.json({ message: "Welcome to Eerkel app" });
-});
+router.route("/signup").get(usersController.signup);
 
-router.route("/signout").get((req, res) => {
-  res.json({ message: "Signed out!" });
-});
+router.route("/signout").get(usersController.signout);
 
-router.route("/updateAccount").get((req, res) => {
-  res.json({ message: "Your account has been updated" });
-});
+router.route("/updateAccount").get(usersController.updateAccount);
 
-router.route("/removeAccount").get((req, res) => {
-  res.json({ message: "Your account has been removed" });
-});
+router.route("/removeAccount").get(usersController.removeAccount);
 
 module.exports = router;
