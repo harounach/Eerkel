@@ -22,7 +22,32 @@ const usersController = {
     }
   },
   signup: (req, res) => {
-    res.json({ message: "Welcome to Eerkel app" });
+    let userObj = {};
+    const username = req.body["username"];
+    const email = req.body["email"];
+    const password = req.body["password"];
+    const vertifyPassword = req.body["verify-password"];
+    if (!username) {
+      res.json({ error: "Username is required" });
+    } else if (!email) {
+      res.json({ error: "Email is required" });
+    } else if (!password) {
+      res.json({ error: "Password is required" });
+    } else if (!vertifyPassword) {
+      res.json({ error: "Reenter password" });
+    } else {
+      if (!Utils.validPassword(password)) {
+        res.json({ error: "Password must be 6-15 characters long" });
+      } else if (password !== vertifyPassword) {
+        res.json({ error: "Password must be the same" });
+      } else {
+        // we cover all scenarios, now we can create a user
+        userObj["username"] = username;
+        userObj["email"] = email;
+        userObj["password"] = password;
+        res.json({ message: "Welcome to Eerkel app" });
+      }
+    }
   },
   signout: (req, res) => {
     res.json({ message: "Signed out!" });
