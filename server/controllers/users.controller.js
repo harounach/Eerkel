@@ -50,6 +50,7 @@ const usersController = {
     }
   },
   signout: (req, res) => {
+    // Sign the user out and redirect to welocme home page
     res.json({ message: "Signed out!" });
   },
   updateAccount: (req, res) => {

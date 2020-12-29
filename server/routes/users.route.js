@@ -6,7 +6,7 @@ router.route("/signin").post(usersController.signin);
 
 router.route("/signup").post(usersController.signup);
 
-router.route("/signout").get(usersController.signout);
+router.route("/signout").post(usersController.signout);
 
 router.route("/updateAccount").get(usersController.updateAccount);
 
