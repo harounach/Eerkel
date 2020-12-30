@@ -6,10 +6,12 @@ import Welcome from "./Pages/Welcome/Welcome";
 import Signin from "./Pages/Signin/Signin";
 import Signup from "./Pages/Signup/Signup";
 import Profile from "./Pages/Profile/Profile";
+import FriendList from "./Pages/FriendList/FriendList";
+import Home from "./Pages/Home/Home";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Profile />
+    <Home />
   </React.StrictMode>,
   document.getElementById("root")
 );
