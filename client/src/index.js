@@ -5,10 +5,11 @@ import App from "./App";
 import Welcome from "./Pages/Welcome/Welcome";
 import Signin from "./Pages/Signin/Signin";
 import Signup from "./Pages/Signup/Signup";
+import Profile from "./Pages/Profile/Profile";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Signup />
+    <Profile />
   </React.StrictMode>,
   document.getElementById("root")
 );
