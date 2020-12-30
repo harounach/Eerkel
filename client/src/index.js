@@ -4,10 +4,11 @@ import "./index.css";
 import App from "./App";
 import Welcome from "./Pages/Welcome/Welcome";
 import Signin from "./Pages/Signin/Signin";
+import Signup from "./Pages/Signup/Signup";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Signin />
+    <Signup />
   </React.StrictMode>,
   document.getElementById("root")
 );
