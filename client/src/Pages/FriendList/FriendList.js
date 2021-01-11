@@ -1,14 +1,12 @@
 import "./FriendList.scss";
 import { Fragment } from "react";
+import Header from "../../Components/Header";
+import Footer from "../../Components/Footer";
 
 function FriendList() {
   return (
     <Fragment>
-      <header className="header">
-        <nav className="nav">
-          <div className="logo">Logo</div>
-        </nav>
-      </header>
+      <Header />
       <main className="main">
         <section className="signup-section">
           <section className="form-section">
@@ -23,7 +21,7 @@ function FriendList() {
           </section>
         </section>
       </main>
-      <footer className="footer">Footer</footer>
+      <Footer />
     </Fragment>
   );
 }

@@ -1,14 +1,12 @@
 import "./Signin.scss";
 import { Fragment } from "react";
+import Header from "../../Components/Header";
+import Footer from "../../Components/Footer";
 
 function Signin() {
   return (
     <Fragment className="content">
-      <header className="header">
-        <nav className="nav">
-          <div className="logo">Logo</div>
-        </nav>
-      </header>
+      <Header />
       <main className="main">
         <section className="signin-section">
           <section className="hero">Hero Image</section>
@@ -23,7 +21,7 @@ function Signin() {
           </section>
         </section>
       </main>
-      <footer className="footer">Footer</footer>
+      <Footer />
     </Fragment>
   );
 }

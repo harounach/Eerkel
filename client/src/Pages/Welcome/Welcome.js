@@ -1,13 +1,11 @@
 import "./Welcome.scss";
+import Header from "../../Components/Header";
+import Footer from "../../Components/Footer";
 
 function Welcome() {
   return (
     <div className="content">
-      <header className="header">
-        <nav className="nav">
-          <div className="logo">Logo</div>
-        </nav>
-      </header>
+      <Header />
       <main className="main">
         <section className="welcome-section">
           <section className="hero">Hero Image</section>
@@ -21,7 +19,7 @@ function Welcome() {
           </section>
         </section>
       </main>
-      <footer className="footer">Footer</footer>
+      <Footer />
     </div>
   );
 }

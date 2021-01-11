@@ -1,14 +1,12 @@
 import "./Profile.scss";
 import { Fragment } from "react";
+import Header from "../../Components/Header";
+import Footer from "../../Components/Footer";
 
 function Profile() {
   return (
     <Fragment>
-      <header className="header">
-        <nav className="nav">
-          <div className="logo">Logo for Profile</div>
-        </nav>
-      </header>
+      <Header />
       <main className="main">
         <section className="signup-section">
           <section className="hero">Hero Image</section>
@@ -30,7 +28,7 @@ function Profile() {
           </section>
         </section>
       </main>
-      <footer className="footer">Footer</footer>
+      <Footer />
     </Fragment>
   );
 }

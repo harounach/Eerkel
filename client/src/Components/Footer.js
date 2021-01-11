@@ -1,4 +1,4 @@
-import ".Footer.scss";
+import "./Footer.scss";
 
 function Footer(props) {
   return <footer className="footer">Footer</footer>;
