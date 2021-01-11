@@ -1,14 +1,11 @@
 import "./Home.scss";
 import { Fragment } from "react";
+import Header from "../../Components/Header";
 
 function Home() {
   return (
     <Fragment>
-      <header className="header">
-        <nav className="nav">
-          <div className="logo">Logo for Home</div>
-        </nav>
-      </header>
+      <Header />
       <main className="main">
         <section className="home-section">
           <section className="friendlist-section">
