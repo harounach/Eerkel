@@ -1,11 +1,14 @@
 import "./Header.scss";
 import { Fragment } from "react";
+import logo from "./logo.svg";
 
 function Header(props) {
   return (
     <header className="header">
       <nav className="nav">
-        <div className="logo">Logo</div>
+        <div className="logo">
+          <img src={logo} alt="Eerkel logo" />
+        </div>
       </nav>
     </header>
   );

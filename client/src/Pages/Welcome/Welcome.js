@@ -1,10 +1,11 @@
 import "./Welcome.scss";
+import { Fragment } from "react";
 import Header from "../../Components/Header";
 import Footer from "../../Components/Footer";
 
 function Welcome() {
   return (
-    <div className="content">
+    <Fragment>
       <Header />
       <main className="main">
         <section className="welcome-section">
@@ -20,7 +21,7 @@ function Welcome() {
         </section>
       </main>
       <Footer />
-    </div>
+    </Fragment>
   );
 }
 
