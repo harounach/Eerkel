@@ -1,6 +1,7 @@
 import "./Home.scss";
 import { Fragment } from "react";
 import Header from "../../Components/Header";
+import Footer from "../../Components/Footer";
 
 function Home() {
   return (
@@ -21,7 +22,7 @@ function Home() {
           </section>
         </section>
       </main>
-      <footer className="footer">Footer</footer>
+      <Footer />
     </Fragment>
   );
 }
