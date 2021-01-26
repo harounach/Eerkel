@@ -3,6 +3,7 @@ import { Fragment } from "react";
 import Header from "../../Components/Header";
 import Footer from "../../Components/Footer";
 import Hero from "../../Components/Hero";
+import SignInButton from "../../Components/SignInButton";
 
 function Welcome() {
   return (
@@ -19,7 +20,9 @@ function Welcome() {
               Eerkel is amazing social media app to make new friends, connect
               with family, share ideas, and find new inspirations!
             </p>
-            <button className="signin-btn">Sign in</button>
+            <div className="btn-container">
+              <SignInButton />
+            </div>
           </section>
         </section>
       </main>

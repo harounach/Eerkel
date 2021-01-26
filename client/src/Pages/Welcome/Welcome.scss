@@ -1,10 +1,13 @@
 .welcome-section {
+  display: flex;
+  flex-direction: column;
 }
 
 .welcome-hero-section {
 }
 
 .welcome-text-section {
+  margin-top: 2rem;
 }
 
 .headline {
@@ -18,4 +21,11 @@
   font-size: 1rem;
   color: rgba(0, 0, 0, 0.6);
   padding: 0 1rem 0 1rem;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
 }

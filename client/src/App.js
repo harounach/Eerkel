@@ -1,5 +1,5 @@
 import "./App.scss";
-import React from "react";
+import React, { Fragment } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Welcome from "./Pages/Welcome/Welcome";
 import Signin from "./Pages/Signin/Signin";
@@ -12,14 +12,14 @@ function App() {
   return (
     <Router>
       {" "}
-      <div className="App">
+      <Fragment>
         <Route path="/" exact component={Welcome} />
         <Route path="/signin" component={Signin} />
         <Route path="/signup" component={Signup} />
         <Route path="/home" component={Home} />
         <Route path="/profile" component={Profile} />
         <Route path="/friendlist" component={FriendList} />
-      </div>
+      </Fragment>
     </Router>
   );
 }
