@@ -7,7 +7,7 @@ function Header(props) {
     <header className="header">
       <nav className="nav">
         <div className="logo">
-          <img src={logo} alt="Eerkel logo" />
+          <img className="logo__img" src={logo} alt="Eerkel logo" />
         </div>
       </nav>
     </header>
