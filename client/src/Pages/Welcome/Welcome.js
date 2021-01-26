@@ -10,12 +10,12 @@ function Welcome() {
       <Header />
       <main className="main">
         <section className="welcome-section">
-          <section className="hero-section">
+          <section className="welcome-hero-section">
             <Hero />
           </section>
-          <section className="text">
+          <section className="welcome-text-section">
             <h1 className="headline">Connect, Share, Enjoy your time!</h1>
-            <p className="para">
+            <p className="subheadline">
               Eerkel is amazing social media app to make new friends, connect
               with family, share ideas, and find new inspirations!
             </p>
