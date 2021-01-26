@@ -1,8 +1,13 @@
 .hero {
-  padding: 2rem;
+  height: 30vh;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero__img {
   display: block;
+  max-height: 100%;
   max-width: 100%;
 }
