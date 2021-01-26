@@ -2,15 +2,18 @@ import "./Signin.scss";
 import { Fragment } from "react";
 import Header from "../../Components/Header";
 import Footer from "../../Components/Footer";
+import Hero from "../../Components/Hero";
 
 function Signin() {
   return (
-    <Fragment className="content">
+    <Fragment>
       <Header />
       <main className="main">
         <section className="signin-section">
-          <section className="hero">Hero Image</section>
-          <section className="form-section">
+          <section className="signin-hero-section">
+            <Hero />
+          </section>
+          <section className="signin-form-section">
             <form action="">
               <label htmlFor="email">Email</label>
               <input id="email" type="text" name="email" />
