@@ -3,6 +3,7 @@ import { Fragment } from "react";
 import Header from "../../Components/Header";
 import Footer from "../../Components/Footer";
 import Hero from "../../Components/Hero";
+import SignInForm from "../../Components/SignInForm";
 
 function Signin() {
   return (
@@ -14,13 +15,7 @@ function Signin() {
             <Hero />
           </section>
           <section className="signin-form-section">
-            <form action="">
-              <label htmlFor="email">Email</label>
-              <input id="email" type="text" name="email" />
-              <label htmlFor="password">Password</label>
-              <input id="password" type="password" name="password" />
-              <button type="submit">Sign in</button>
-            </form>
+            <SignInForm />
           </section>
         </section>
       </main>
