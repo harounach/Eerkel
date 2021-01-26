@@ -2,6 +2,7 @@ import "./Welcome.scss";
 import { Fragment } from "react";
 import Header from "../../Components/Header";
 import Footer from "../../Components/Footer";
+import Hero from "../../Components/Hero";
 
 function Welcome() {
   return (
@@ -9,7 +10,9 @@ function Welcome() {
       <Header />
       <main className="main">
         <section className="welcome-section">
-          <section className="hero">Hero Image</section>
+          <section className="hero-section">
+            <Hero />
+          </section>
           <section className="text">
             <h1 className="headline">Connect, Share, Enjoy your time!</h1>
             <p className="para">
