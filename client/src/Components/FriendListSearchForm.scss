@@ -1,0 +1,42 @@
+.fl-search-form {
+  margin: 0;
+  padding: 0;
+}
+
+.fl-input-section {
+  width: 100%;
+  padding: 0 1rem;
+  display: flex;
+}
+
+.fl-input-control {
+  display: block;
+  flex-grow: 1;
+  height: 3rem;
+  border: 0.25rem solid #e5e6e5;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.fl-search-btn {
+  width: 3rem;
+  height: 3rem;
+  padding: 0 1rem 0 1rem;
+  color: #000000;
+  background-color: #6df9b3;
+  border: none;
+  border-radius: 0.25rem;
+  font-family: "Nunito", Helvetica, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  outline: none;
+  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    box-shadow: 0px 3px 6px 2px rgba(0, 0, 0, 0.2),
+      0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  }
+}

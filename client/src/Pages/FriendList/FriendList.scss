@@ -1,0 +1,26 @@
+.friendlist-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.friendlist-form-section {
+  margin-top: 1rem;
+}
+
+.friends-section {
+  margin-top: 1rem;
+  padding: 0 1rem;
+}
+
+.friends-title {
+  color: rgba($color: #000000, $alpha: 0.6);
+  text-transform: uppercase;
+}
+
+.friends {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 100%;
+}
