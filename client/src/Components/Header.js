@@ -1,5 +1,4 @@
 import "./Header.scss";
-import { Fragment } from "react";
 import logo from "./logo.svg";
 
 function Header(props) {

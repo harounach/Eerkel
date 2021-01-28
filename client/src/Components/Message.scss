@@ -1,0 +1,32 @@
+.message {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.message__avatar {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #c7c7c7;
+  border-radius: 50%;
+}
+
+.message__content {
+  margin: 0 0 0 1rem;
+  padding: 0.5rem;
+  width: 87%;
+  background-color: #f4f4f4;
+  position: relative;
+  border-radius: 0.25rem;
+
+  &::before {
+    content: " ";
+    position: absolute;
+    margin: 0;
+    right: 100%;
+    top: 0.25rem;
+    border-width: 0.5rem;
+    border-style: solid;
+    border-color: transparent #f4f4f4 transparent transparent;
+  }
+}
