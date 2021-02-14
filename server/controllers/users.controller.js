@@ -1,24 +1,40 @@
 const Utils = require("../utils/utils");
+const validator = require("validator").default;
 
 const usersController = {
   signin: (req, res) => {
     let userObj = {};
-    const email = req.body["email"];
-    const password = req.body["password"];
+    const errors = [];
+
+    const { email, password } = req.body;
+
+    // 01- check email is not null
+    // 02- check password is not null
+    // 03- validate email
+    // 04- validate password
+
     if (!email) {
-      res.json({ error: "Email is required" });
-    } else if (!password) {
-      res.json({ error: "Password is required" });
+      errors.push("Email is required");
+    }
+
+    if (!password) {
+      errors.push("Password is required");
+    }
+
+    if (!validator.isEmail(email)) {
+      errors.push("Invalid Email");
+    }
+
+    if (!(password.length >= 6 && password.length <= 15)) {
+      errors.push("Password must be 6-15 characters long");
+    }
+
+    if (errors.length > 0) {
+      res.send({ error: errors });
     } else {
-      if (!Utils.validateEmail(email)) {
-        res.json({ error: "Invalid Email" });
-      } else if (!Utils.validPassword(password)) {
-        res.json({ error: "Password must be 6-15 characters long" });
-      } else {
-        userObj["email"] = email;
-        userObj["password"] = password;
-        res.json({ message: "Congratulations! user are signin" });
-      }
+      userObj["email"] = email;
+      userObj["password"] = password;
+      res.json({ message: "Congratulations! user are signin" });
     }
   },
   signup: (req, res) => {

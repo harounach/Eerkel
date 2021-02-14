@@ -1,4 +1,3 @@
-import Home from "../Pages/Home/Home";
 import "./HomeFriendsItem.scss";
 
 function HomeFriendsItem(props) {
@@ -6,7 +5,7 @@ function HomeFriendsItem(props) {
     <li className="home-fl-item">
       <div className="home-fl-item__avatar-status">
         <div className="home-fl-item__avatar"></div>
-        <span classNaem="home-fl-item__status"></span>
+        <span className="home-fl-item__status"></span>
       </div>
 
       <h4 className="home-fl-item__name">{props.profileName}</h4>
