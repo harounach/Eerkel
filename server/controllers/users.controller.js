@@ -1,6 +1,7 @@
 const Utils = require("../utils/utils");
 const validator = require("validator").default;
 const usersDAO = require("../dao/usersDAO");
+const passwordUtils = require("../utils/passwordUtils");
 
 const usersController = {
   signin: (req, res) => {
@@ -88,16 +89,28 @@ const usersController = {
       userObj["email"] = email;
       userObj["password"] = password;
 
-      // add the user to the database
-      usersDAO
-        .createUser(userObj)
-        .then((newUser) => {
-          res.json({ message: "Welcome to Eerkel app" });
-        })
-        .catch((err) => {
-          console.error(err);
-          res.json({ error: "Something went wrong" });
-        });
+      // check if user exists
+      usersDAO.userExists(email).then((userExisted) => {
+        if (userExisted) {
+          res.json({ error: "This user already exists" });
+        } else {
+          // Hash the password
+          passwordUtils
+            .hashPassword(password)
+            .then((hashedPassword) => {
+              // add the user to the database
+              userObj["password"] = hashedPassword;
+              return usersDAO.createUser(userObj);
+            })
+            .then((newUser) => {
+              res.json({ message: "User created successfully" });
+            })
+            .catch((err) => {
+              console.error(err);
+              res.json({ error: "Server error" });
+            });
+        }
+      });
     }
   },
   signout: (req, res) => {

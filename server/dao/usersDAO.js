@@ -43,4 +43,9 @@ module.exports = {
 
   /** remove user */
   removeUser: function (filter, done) {},
+
+  /** check if user exists */
+  userExists: function (userEmail) {
+    return User.exists({ email: userEmail });
+  },
 };
