@@ -2,18 +2,20 @@ const User = require("../models/user");
 
 module.exports = {
   /** Creater user */
-  createUser: function (userObj, done) {
+  createUser: function (userObj /*, done */) {
     let newUser = new User(userObj);
-    newUser.save((err, data) => {
-      if (err) {
-        /* FAILURE */
-        console.error(err);
-        done(err);
-      } else {
-        /* SUCCESS */
-        done(null, data);
-      }
-    });
+    // newUser.save((err, data) => {
+    //   if (err) {
+    //     /* FAILURE */
+    //     console.error(err);
+    //     done(err);
+    //   } else {
+    //     /* SUCCESS */
+    //     done(null, data);
+    //   }
+    // });
+
+    return newUser.save();
   },
 
   /** update user */

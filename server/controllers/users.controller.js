@@ -1,5 +1,6 @@
 const Utils = require("../utils/utils");
 const validator = require("validator").default;
+const usersDAO = require("../dao/usersDAO");
 
 const usersController = {
   signin: (req, res) => {
@@ -86,7 +87,17 @@ const usersController = {
       userObj["username"] = username;
       userObj["email"] = email;
       userObj["password"] = password;
-      res.json({ message: "Welcome to Eerkel app" });
+
+      // add the user to the database
+      usersDAO
+        .createUser(userObj)
+        .then((newUser) => {
+          res.json({ message: "Welcome to Eerkel app" });
+        })
+        .catch((err) => {
+          console.error(err);
+          res.json({ error: "Something went wrong" });
+        });
     }
   },
   signout: (req, res) => {
