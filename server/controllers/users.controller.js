@@ -68,7 +68,16 @@ exports.signupImproved = [
     // Indicates the success of this synchronous custom validator
     return true;
   }),
-  //body(""),
+
+  // Check if email already in use
+  body("email").custom((email) => {
+    return usersDAO.userExists(email).then((userExisted) => {
+      if (userExisted) {
+        return Promise.reject("Email already in use");
+      }
+    });
+  }),
+
   // return json
   function (req, res, next) {
     const errors = validationResult(req);
