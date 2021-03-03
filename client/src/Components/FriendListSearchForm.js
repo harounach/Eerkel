@@ -4,7 +4,12 @@ function FriendListSearchForm(props) {
   return (
     <form className="fl-search-form" action="">
       <div className="fl-input-section">
-        <input className="fl-input-control" type="text" name="search" />
+        <input
+          className="fl-input-control"
+          type="text"
+          name="search"
+          placeholder="Search"
+        />
         <button className="fl-search-btn" type="submit">
           S
         </button>
