@@ -40,14 +40,14 @@ function SignUpForm(props) {
       </div>
       {/* Verify Password */}
       <div className="signup-input-section">
-        <label className="signup-input-label" htmlFor="password">
+        <label className="signup-input-label" htmlFor="passwordConfirmation">
           Password
         </label>
         <input
           className="signup-input-control"
-          id="password"
+          id="passwordConfirmation"
           type="password"
-          name="password"
+          name="passwordConfirmation"
         />
       </div>
       <div className="signup-form-btn-section">
