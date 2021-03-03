@@ -3,126 +3,174 @@ const validator = require("validator").default;
 const usersDAO = require("../dao/usersDAO");
 const passwordUtils = require("../utils/passwordUtils");
 
-const usersController = {
-  signin: (req, res) => {
-    let userObj = {};
-    const errors = [];
+const { body, validationResult } = require("express-validator");
 
-    const { email, password } = req.body;
+// Sign In endpoint
+exports.signin = function (req, res, next) {
+  let userObj = {};
+  const errors = [];
 
-    // 01- check email is not null
-    // 02- check password is not null
-    // 03- validate email
-    // 04- validate password
+  const { email, password } = req.body;
 
-    if (!email) {
-      errors.push("Email is required");
-    }
+  // 01- check email is not null
+  // 02- check password is not null
+  // 03- validate email
+  // 04- validate password
 
-    if (!password) {
-      errors.push("Password is required");
-    }
+  if (!email) {
+    errors.push("Email is required");
+  }
 
-    if (!validator.isEmail(email)) {
-      errors.push("Invalid Email");
-    }
+  if (!password) {
+    errors.push("Password is required");
+  }
 
-    if (!(password.length >= 6 && password.length <= 15)) {
-      errors.push("Password must be 6-15 characters long");
-    }
+  if (!validator.isEmail(email)) {
+    errors.push("Invalid Email");
+  }
 
-    if (errors.length > 0) {
-      res.send({ error: errors });
-    } else {
-      userObj["email"] = email;
-      userObj["password"] = password;
-      res.json({ message: "Congratulations! user are signin" });
-    }
-  },
-  signup: (req, res) => {
-    let userObj = {};
-    const errors = [];
+  if (!(password.length >= 6 && password.length <= 15)) {
+    errors.push("Password must be 6-15 characters long");
+  }
 
-    const { username, email, password, verifyPassword } = req.body;
-
-    // 01- check username is not null
-    // 02- check email is not null
-    // 03- check password is not null
-    // 04- check verifyPassword is not null
-    // 05- validate email
-    // 06- validate password
-    // 07- check equality of password and verifyPassword
-
-    if (!username) {
-      errors.push("Username is required");
-    }
-
-    if (!email) {
-      errors.push("Email is required");
-    }
-
-    if (!password) {
-      errors.push("Password is required");
-    }
-
-    if (!verifyPassword) {
-      errors.push("Reenter password");
-    }
-
-    if (!validator.isEmail(email)) {
-      errors.push("Invalid Email");
-    }
-
-    if (!(password.length >= 6 && password.length <= 15)) {
-      errors.push("Password must be 6-15 characters long");
-    }
-
-    if (!validator.equals(password, verifyPassword)) {
-      errors.push("Passwords must be the same");
-    }
-
-    if (errors.length > 0) {
-      res.json({ error: errors });
-    } else {
-      // we cover all scenarios, now we can create a user
-      userObj["username"] = username;
-      userObj["email"] = email;
-      userObj["password"] = password;
-
-      // check if user exists
-      usersDAO.userExists(email).then((userExisted) => {
-        if (userExisted) {
-          res.json({ error: "This user already exists" });
-        } else {
-          // Hash the password
-          passwordUtils
-            .hashPassword(password)
-            .then((hashedPassword) => {
-              // add the user to the database
-              userObj["password"] = hashedPassword;
-              return usersDAO.createUser(userObj);
-            })
-            .then((newUser) => {
-              res.json({ message: "User created successfully" });
-            })
-            .catch((err) => {
-              console.error(err);
-              res.json({ error: "Server error" });
-            });
-        }
-      });
-    }
-  },
-  signout: (req, res) => {
-    // Sign the user out and redirect to welocme home page
-    res.json({ message: "Signed out!" });
-  },
-  updateAccount: (req, res) => {
-    res.json({ message: "Your account has been updated" });
-  },
-  removeAccount: (req, res) => {
-    res.json({ message: "Your account has been removed" });
-  },
+  if (errors.length > 0) {
+    res.send({ error: errors });
+  } else {
+    userObj["email"] = email;
+    userObj["password"] = password;
+    res.json({ message: "Congratulations! user are signin" });
+  }
 };
 
-module.exports = usersController;
+// Improved Sign Up endpoint
+exports.signupImproved = [
+  // Validate and sanitize fields.
+
+  // Validate & sanitize username
+  body("username", "Username must not be empty.")
+    .trim()
+    .isLength({ min: 4 })
+    .escape(),
+  // Validate & sanitize email
+  body("email", "Email must not be empty.").trim().isEmail().escape(),
+  // Validate & sanitize password
+  body("password", "Password must be 6-15 characters long")
+    .trim()
+    .isLength({ min: 6, max: 15 })
+    .escape(),
+  // Validate passwordConfirmation
+  body("passwordConfirmation").custom((passwordConfirmation, { req }) => {
+    const { password } = req.body;
+    if (passwordConfirmation !== password) {
+      throw new Error("Password confirmation does not match password");
+    }
+
+    // Indicates the success of this synchronous custom validator
+    return true;
+  }),
+  //body(""),
+  // return json
+  function (req, res, next) {
+    const errors = validationResult(req);
+
+    // Data is invalid
+    if (!errors.isEmpty()) {
+      res.json(errors);
+    } else {
+      // Data is valid
+      res.json({ message: "User created successfully" });
+    }
+  },
+];
+
+// Sign Up endpoint
+exports.signup = function (req, res, next) {
+  let userObj = {};
+  const errors = [];
+
+  const { username, email, password, verifyPassword } = req.body;
+
+  // 01- check username is not null
+  // 02- check email is not null
+  // 03- check password is not null
+  // 04- check verifyPassword is not null
+  // 05- validate email
+  // 06- validate password
+  // 07- check equality of password and verifyPassword
+
+  if (!username) {
+    errors.push("Username is required");
+  }
+
+  if (!email) {
+    errors.push("Email is required");
+  }
+
+  if (!password) {
+    errors.push("Password is required");
+  }
+
+  if (!verifyPassword) {
+    errors.push("Reenter password");
+  }
+
+  if (!validator.isEmail(email)) {
+    errors.push("Invalid Email");
+  }
+
+  if (!(password.length >= 6 && password.length <= 15)) {
+    errors.push("Password must be 6-15 characters long");
+  }
+
+  if (!validator.equals(password, verifyPassword)) {
+    errors.push("Passwords must be the same");
+  }
+
+  if (errors.length > 0) {
+    res.json({ error: errors });
+  } else {
+    // we cover all scenarios, now we can create a user
+    userObj["username"] = username;
+    userObj["email"] = email;
+    userObj["password"] = password;
+
+    // check if user exists
+    usersDAO.userExists(email).then((userExisted) => {
+      if (userExisted) {
+        res.json({ error: "This user already exists" });
+      } else {
+        // Hash the password
+        passwordUtils
+          .hashPassword(password)
+          .then((hashedPassword) => {
+            // add the user to the database
+            userObj["password"] = hashedPassword;
+            return usersDAO.createUser(userObj);
+          })
+          .then((newUser) => {
+            res.json({ message: "User created successfully" });
+          })
+          .catch((err) => {
+            console.error(err);
+            res.json({ error: "Server error" });
+          });
+      }
+    });
+  }
+};
+
+// Sign Out endpoint
+exports.signout = function (req, res, next) {
+  // Sign the user out and redirect to welocme home page
+  res.json({ message: "Signed out!" });
+};
+
+// Update account endpoint
+exports.updateAccount = function (req, res, next) {
+  res.json({ message: "Your account has been updated" });
+};
+
+// Remove account endpoint
+exports.removeAccount = function (req, res, next) {
+  res.json({ message: "Your account has been removed" });
+};
