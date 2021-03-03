@@ -2,7 +2,7 @@ const { Router } = require("express");
 const router = Router();
 const usersController = require("../controllers/users.controller");
 
-router.route("/signin").post(usersController.signin);
+router.route("/signin").post(usersController.signinImproved);
 
 router.route("/signup").post(usersController.signup);
 

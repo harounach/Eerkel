@@ -5,6 +5,35 @@ const passwordUtils = require("../utils/passwordUtils");
 
 const { body, validationResult } = require("express-validator");
 
+// Improved Sign In endpoint
+exports.signinImproved = [
+  // Validate and sanitize fields.
+
+  // Validate & sanitize username
+  body("email", "Email must not be empty.").trim().isEmail().escape(),
+  // Validate & sanitize password
+  body("password", "Password must be 6-15 characters long")
+    .trim()
+    .isLength({ min: 6, max: 15 })
+    .escape(),
+
+  // return json
+  function (req, res, next) {
+    const errors = validationResult(req);
+
+    // Data is invalid
+    if (!errors.isEmpty()) {
+      res.json(errors);
+    } else {
+      // Data is valid, sign the user in
+
+      res.json({ message: "Congratulations! you are signin" });
+    }
+  },
+
+  // Passport here
+];
+
 // Sign In endpoint
 exports.signin = function (req, res, next) {
   let userObj = {};
