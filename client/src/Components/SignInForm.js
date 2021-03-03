@@ -1,5 +1,7 @@
 import "./SignInForm.scss";
 
+import { Link } from "react-router-dom";
+
 function SignInForm(props) {
   return (
     <form className="signin-form" action="">
@@ -30,6 +32,12 @@ function SignInForm(props) {
           Sign in
         </button>
       </div>
+      <p className="signin-form__signup-link-text">
+        Don't have an account?{" "}
+        <Link to="/signup" className="signin-form__signup-link">
+          Sign Up
+        </Link>
+      </p>
     </form>
   );
 }
