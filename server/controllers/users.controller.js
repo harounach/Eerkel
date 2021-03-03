@@ -42,8 +42,8 @@ exports.signin = function (req, res, next) {
   }
 };
 
-// Improved Sign Up endpoint
-exports.signupImproved = [
+// Sign Up endpoint
+exports.signup = [
   // Validate and sanitize fields.
 
   // Validate & sanitize username
@@ -86,87 +86,33 @@ exports.signupImproved = [
     if (!errors.isEmpty()) {
       res.json(errors);
     } else {
-      // Data is valid
-      res.json({ message: "User created successfully" });
+      // Data is valid, create the user in the database
+
+      const { username, email, password } = req.body;
+
+      const userObj = {};
+      userObj["username"] = username;
+      userObj["email"] = email;
+      userObj["password"] = password;
+
+      // Hash the password
+      passwordUtils
+        .hashPassword(password)
+        .then((hashedPassword) => {
+          // add the user to the database
+          userObj["password"] = hashedPassword;
+          return usersDAO.createUser(userObj);
+        })
+        .then((newUser) => {
+          res.json({ message: "User created successfully" });
+        })
+        .catch((err) => {
+          console.error(err);
+          res.json({ error: "Server error" });
+        });
     }
   },
 ];
-
-// Sign Up endpoint
-exports.signup = function (req, res, next) {
-  let userObj = {};
-  const errors = [];
-
-  const { username, email, password, verifyPassword } = req.body;
-
-  // 01- check username is not null
-  // 02- check email is not null
-  // 03- check password is not null
-  // 04- check verifyPassword is not null
-  // 05- validate email
-  // 06- validate password
-  // 07- check equality of password and verifyPassword
-
-  if (!username) {
-    errors.push("Username is required");
-  }
-
-  if (!email) {
-    errors.push("Email is required");
-  }
-
-  if (!password) {
-    errors.push("Password is required");
-  }
-
-  if (!verifyPassword) {
-    errors.push("Reenter password");
-  }
-
-  if (!validator.isEmail(email)) {
-    errors.push("Invalid Email");
-  }
-
-  if (!(password.length >= 6 && password.length <= 15)) {
-    errors.push("Password must be 6-15 characters long");
-  }
-
-  if (!validator.equals(password, verifyPassword)) {
-    errors.push("Passwords must be the same");
-  }
-
-  if (errors.length > 0) {
-    res.json({ error: errors });
-  } else {
-    // we cover all scenarios, now we can create a user
-    userObj["username"] = username;
-    userObj["email"] = email;
-    userObj["password"] = password;
-
-    // check if user exists
-    usersDAO.userExists(email).then((userExisted) => {
-      if (userExisted) {
-        res.json({ error: "This user already exists" });
-      } else {
-        // Hash the password
-        passwordUtils
-          .hashPassword(password)
-          .then((hashedPassword) => {
-            // add the user to the database
-            userObj["password"] = hashedPassword;
-            return usersDAO.createUser(userObj);
-          })
-          .then((newUser) => {
-            res.json({ message: "User created successfully" });
-          })
-          .catch((err) => {
-            console.error(err);
-            res.json({ error: "Server error" });
-          });
-      }
-    });
-  }
-};
 
 // Sign Out endpoint
 exports.signout = function (req, res, next) {
