@@ -1,5 +1,7 @@
 import "./FriendListItem.scss";
 
+import { PersonAdd } from "@material-ui/icons";
+
 function FriendListItem(props) {
   return (
     <li className="fl-item">
@@ -10,7 +12,9 @@ function FriendListItem(props) {
         <h3 className="fl-item__name">{props.profileName}</h3>
       </div>
 
-      <button className="fl-item__control-btn">+</button>
+      <button className="fl-item__control-btn">
+        <PersonAdd />
+      </button>
     </li>
   );
 }
