@@ -8,7 +8,7 @@ import FriendListItem from "../../Components/FriendListItem";
 function FriendList() {
   return (
     <Fragment>
-      <Header elevated={true} />
+      <Header elevated={true} hasProfile={true} />
       <main className="main">
         <section className="friendlist-section">
           <section className="friendlist-form-section">
