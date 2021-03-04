@@ -1,5 +1,7 @@
 import "./FriendListSearchForm.scss";
 
+import { Search } from "@material-ui/icons";
+
 function FriendListSearchForm(props) {
   return (
     <form className="fl-search-form" action="">
@@ -11,7 +13,7 @@ function FriendListSearchForm(props) {
           placeholder="Search"
         />
         <button className="fl-search-btn" type="submit">
-          S
+          <Search />
         </button>
       </div>
     </form>
