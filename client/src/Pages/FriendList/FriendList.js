@@ -17,11 +17,11 @@ function FriendList() {
           <section className="friends-section">
             <h1 className="friends-title">Friend List</h1>
             <ul className="friends">
-              <FriendListItem profileName="Steve" key="1" />
-              <FriendListItem profileName="Clarke" key="2" />
-              <FriendListItem profileName="Murphy" key="3" />
-              <FriendListItem profileName="Bellamy" key="4" />
-              <FriendListItem profileName="Niyla" key="5" />
+              <FriendListItem profileName="Steve" key="1" isFriend="no" />
+              <FriendListItem profileName="Clarke" key="2" isFriend="yes" />
+              <FriendListItem profileName="Murphy" key="3" isFriend="no" />
+              <FriendListItem profileName="Bellamy" key="4" isFriend="yes" />
+              <FriendListItem profileName="Niyla" key="5" isFriend="yes" />
             </ul>
           </section>
         </section>
