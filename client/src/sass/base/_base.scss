@@ -1,0 +1,122 @@
+@use "../abstracts/variables";
+@use "./typography";
+@use "../abstracts/mixins";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// Customize scrollbar
+// Works on Firefox
+* {
+  scrollbar-width: thin;
+  scrollbar-color: variables.$scrollbar-handle-color
+    variables.$scrollbar-track-color;
+}
+
+// Works on Chrome, Edge, and Safari
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: variables.$scrollbar-track-color;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: variables.$scrollbar-handle-color;
+  border-radius: 20px;
+  border: 3px solid variables.$scrollbar-track-color;
+}
+
+html {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: typography.$base-font;
+  font-size: typography.$base-font-size;
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: typography.$body-font-size;
+  background-color: variables.$background-color;
+}
+
+.headline {
+  font-size: typography.$headline-font-size;
+  font-weight: 700;
+  color: typography.$text-high-color;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 1rem;
+
+  // large tablet
+  @include mixins.large-tablet {
+    font-size: 2.5rem;
+    text-align: left;
+  }
+}
+
+.subheadline {
+  font-size: typography.$subheadline-font-size;
+  font-weight: 600;
+  color: typography.$text-medium-color;
+
+  // large tablet
+  @include mixins.large-tablet {
+    margin-bottom: 3rem;
+  }
+}
+
+.title {
+  // tablet
+  @include mixins.tablet {
+    margin-top: 0;
+  }
+}
+
+.subtitle {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: typography.$text-low-color;
+  margin: 0.5rem 0;
+  font-size: 1.125rem;
+}
+
+// goto-auth
+.goto-auth {
+  text-align: center;
+  margin-bottom: 2rem;
+
+  // tablet
+  @include mixins.tablet {
+    margin-bottom: 1rem;
+  }
+
+  // goto-auth__link
+  &__link {
+    color: variables.$secondary-color;
+    font-weight: 700;
+  }
+}
+
+.scrim {
+  width: 100%;
+  height: calc(100%);
+  position: absolute;
+  background-color: rgba($color: #000000, $alpha: 0);
+  pointer-events: none;
+  z-index: 12;
+
+  // scrim--active
+  &--active {
+    background-color: rgba($color: #000000, $alpha: 0.1);
+  }
+
+  display: none;
+}

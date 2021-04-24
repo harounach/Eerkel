@@ -1,0 +1,116 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+
+// profile-page
+.profile-page {
+  width: 100%;
+  height: 100%;
+  // profile-page__body
+  &__body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  // profile-page__header
+  &__header {
+    flex-shrink: 0;
+    position: fixed;
+    top: 0;
+    // z-index
+    @include mixins.z-index("appbar");
+  }
+
+  // profile-page__main
+  &__main {
+    width: 100%;
+    margin: 3.5rem 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+
+    // tablet
+    @include mixins.tablet {
+      flex-direction: row;
+      flex-grow: 1;
+    }
+
+    // extra large tablet
+    @include mixins.xlarge-tablet {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    // small-desktop
+    @include mixins.small-desktop {
+      padding-left: 5%;
+      padding-right: 5%;
+    }
+
+    // desktop
+    @include mixins.desktop {
+      padding-left: 8%;
+      padding-right: 8%;
+    }
+  }
+
+  // profile-page__form
+  &__form {
+    width: 100%;
+    padding: 1rem;
+    margin: 0;
+
+    // tablet
+    @include mixins.tablet {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    // small-desktop
+    @include mixins.small-desktop {
+      padding-left: 6%;
+    }
+
+    // desktop
+    @include mixins.desktop {
+      padding-left: 8%;
+      padding-right: 8%;
+    }
+  }
+
+  // profile-page__btn-wrapper
+  &__btn-wrapper {
+    justify-content: space-between;
+  }
+
+  // profile-page__hero-wrapper
+  &__hero-wrapper {
+    width: 100%;
+    padding: 1rem;
+
+    // tablet
+    @include mixins.tablet {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  // profile-page__hero
+  &__hero {
+    display: none;
+
+    // tablet
+    @include mixins.tablet {
+      display: block;
+    }
+  }
+
+  // profile-page__footer
+  &__footer {
+    margin-top: auto;
+  }
+}

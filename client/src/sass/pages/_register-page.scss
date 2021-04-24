@@ -1,0 +1,122 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+
+// register-page
+.register-page {
+  width: 100%;
+  height: 100%;
+  // register-page__body
+  &__body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  // register-page__header
+  &__header {
+    flex-shrink: 0;
+    position: fixed;
+    top: 0;
+    // z-index
+    @include mixins.z-index("appbar");
+  }
+
+  // register-page__main
+  &__main {
+    width: 100%;
+    margin: 3.5rem 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+
+    // tablet
+    @include mixins.tablet {
+      flex-direction: row;
+      flex-grow: 1;
+    }
+
+    // extra large tablet
+    @include mixins.xlarge-tablet {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    // small-desktop
+    @include mixins.small-desktop {
+      padding-left: 5%;
+      padding-right: 5%;
+    }
+
+    // desktop
+    @include mixins.desktop {
+      padding-left: 8%;
+      padding-right: 8%;
+    }
+  }
+
+  // register-page__form
+  &__form {
+    width: 100%;
+    padding: 1rem;
+    margin: 0rem;
+
+    // tablet
+    @include mixins.tablet {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    // small-desktop
+    @include mixins.small-desktop {
+      padding-left: 6%;
+    }
+
+    // desktop
+    @include mixins.desktop {
+      padding-left: 8%;
+      padding-right: 8%;
+    }
+  }
+
+  // register-page__btn-wrapper
+  &__btn-wrapper {
+    justify-content: center;
+
+    // tablet
+    @include mixins.tablet {
+      justify-content: flex-start;
+    }
+  }
+
+  // register-page__hero-wrapper
+  &__hero-wrapper {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    // tablet
+    @include mixins.tablet {
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+  }
+
+  // register-page__hero
+  &__hero {
+    display: none;
+
+    // tablet
+    @include mixins.tablet {
+      display: block;
+    }
+  }
+
+  // register-page__footer
+  &__footer {
+    margin-top: auto;
+  }
+}

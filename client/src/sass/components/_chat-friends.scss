@@ -1,0 +1,94 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+
+// chat-friends-list
+.chat-friends-list {
+  width: 100%;
+  padding: 0.5rem 0;
+  display: grid;
+  grid-template-columns: 100%;
+  row-gap: 0.125rem;
+}
+
+// chat-friend
+.chat-friend {
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  padding-left: 0.5rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba($color: variables.$primary-color, $alpha: 0.04);
+  }
+
+  // chat-friend--active
+  &--active {
+    background-color: rgba($color: variables.$primary-color, $alpha: 0.12);
+  }
+
+  // chat-friend--offline
+  &--offline &__status {
+    background-color: variables.$offline-color;
+  }
+
+  // chat-friend__avatar-status
+  &__avatar-status {
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+
+  // chat-friend__avatar-wrapper
+  &__avatar-wrapper {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  // chat-friend__avatar
+  &__avatar {
+    width: 100%;
+    height: 100%;
+    background-color: variables.$primary-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  // chat-friend__avatar-name
+  &__avatar-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+  }
+
+  // chat-friend__status
+  &__status {
+    width: 0.75rem;
+    height: 0.75rem;
+    display: block;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: variables.$online-color;
+
+    // z-index
+    @include mixins.z-index("status");
+  }
+
+  // chat-friend__name
+  &__name {
+    display: block;
+    flex-grow: 1;
+    margin-left: 1rem;
+    font-weight: 600;
+  }
+}

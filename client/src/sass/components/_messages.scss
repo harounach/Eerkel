@@ -1,0 +1,100 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+
+// message-list
+.message-list {
+  width: 100%;
+  margin: 0;
+  padding: 1.5rem 1rem 0.5rem;
+  display: grid;
+  grid-template-columns: 100%;
+  gap: 1rem;
+}
+
+// message
+.message {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  // message__avatar-wrapper
+  &__avatar-wrapper {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  // message__avatar
+  &__avatar {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: variables.$primary-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  // message__avatar-name
+  &__avatar-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+  }
+
+  // message__message-buble
+  &__message-buble {
+    flex-grow: 1;
+    margin-left: 1rem;
+    background-color: variables.$secondary-color;
+    color: variables.$on-secondary-color;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    position: relative;
+
+    // bubble arrow
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0.125rem;
+      left: -1.5rem;
+      width: 0;
+      height: 0;
+      border-top: 1rem solid transparent;
+      border-bottom: 1rem solid transparent;
+      border-left: 1rem solid transparent;
+      border-right: 1rem solid variables.$secondary-color;
+    }
+  }
+
+  // message__text
+  &__text {
+    margin: 0;
+    padding: 0;
+  }
+
+  // message--right
+  &--right {
+    flex-direction: row-reverse;
+
+    & .message__message-buble {
+      margin-left: 0;
+      margin-right: 1rem;
+      background-color: #dfdfdf;
+      color: #000000;
+
+      &::before {
+        left: calc(100% - 0.5rem);
+        border-top: 1rem solid transparent;
+        border-bottom: 1rem solid transparent;
+        border-left: 1rem solid #dfdfdf;
+        border-right: 1rem solid transparent;
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+@use "../abstracts/mixins";
+
+.hero {
+  width: 12rem;
+  height: 12rem;
+
+  // tablet
+  @include mixins.tablet {
+    width: 14rem;
+    height: 14rem;
+  }
+
+  // large tablet
+  @include mixins.large-tablet {
+    width: 19rem;
+    height: 19rem;
+  }
+
+  // large-desktop
+  @include mixins.large-desktop {
+    width: 22rem;
+    height: 22rem;
+  }
+}

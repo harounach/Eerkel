@@ -1,0 +1,41 @@
+// colors
+$primary-color: #003049;
+$secondary-color: #ef233c;
+$background-color: #f0f0f0;
+$surface-color: #ffffff;
+$error-color: #d90429;
+
+// text colors
+$on-primary-color: #ffffff;
+$on-secondary-color: #ffffff;
+$on-background-color: #000000;
+$on-surface-color: #000000;
+$on-error-color: #ffffff;
+
+// scrollbar colors
+$scrollbar-track-color: #f3f3f3;
+$scrollbar-handle-color: rgba(0, 0, 0, 0.377);
+
+// online & offline status colors
+$online-color: #29d612;
+$offline-color: #d61222;
+
+// elevations
+$elevations: (
+  no-elevation: 0,
+  status: 2,
+  appbar: 4,
+  bottom-bar: 3,
+  scrim: 12,
+  drawer: 16,
+);
+
+// breakpoints
+$breakpoints: (
+  tablet: 600px,
+  large-tablet: 720px,
+  xlarge-tablet: 840px,
+  small-desktop: 960px,
+  desktop: 1024px,
+  large-desktop: 1280px,
+);

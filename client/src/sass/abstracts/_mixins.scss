@@ -1,0 +1,72 @@
+@use "sass:map";
+@use "./variables";
+
+@mixin appbar-shadow {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+@mixin btn-shadow {
+  box-shadow: 1px 4px 18px 0px rgba(0, 0, 0, 0.23);
+}
+
+@mixin btn-hover-shadow {
+  box-shadow: 1px 4px 18px 4px rgba(0, 0, 0, 0.23);
+}
+
+@mixin surface-shadow {
+  box-shadow: 0 0.9px 1.3px -6px rgba(0, 0, 0, 0.045),
+    0 2.5px 3.6px -6px rgba(0, 0, 0, 0.065),
+    0 6px 8.7px -6px rgba(0, 0, 0, 0.085), 0 20px 29px -6px rgba(0, 0, 0, 0.13);
+}
+
+@mixin bottom-shadow {
+  box-shadow: 0 0px 2.2px rgba(0, 0, 0, 0.028), 0 0px 5.3px rgba(0, 0, 0, 0.04),
+    0 0px 10px rgba(0, 0, 0, 0.05), 0 0px 17.9px rgba(0, 0, 0, 0.06),
+    0 0px 33.4px rgba(0, 0, 0, 0.072), 0 0px 80px rgba(0, 0, 0, 0.1);
+}
+
+@mixin z-index($elevation) {
+  z-index: map.get(variables.$elevations, $elevation);
+}
+
+// tablet
+@mixin tablet {
+  @media screen and (min-width: map.get(variables.$breakpoints, "tablet")) {
+    @content;
+  }
+}
+
+// large tablet
+@mixin large-tablet {
+  @media screen and (min-width: map.get(variables.$breakpoints, "large-tablet")) {
+    @content;
+  }
+}
+
+// extra large tablet
+@mixin xlarge-tablet {
+  @media screen and (min-width: map.get(variables.$breakpoints, "xlarge-tablet")) {
+    @content;
+  }
+}
+
+// small desktop
+@mixin small-desktop {
+  @media screen and (min-width: map.get(variables.$breakpoints, "small-desktop")) {
+    @content;
+  }
+}
+
+// desktop
+@mixin desktop {
+  @media screen and (min-width: map.get(variables.$breakpoints, "desktop")) {
+    @content;
+  }
+}
+
+// large desktop
+@mixin large-desktop {
+  @media screen and (min-width: map.get(variables.$breakpoints, "large-desktop")) {
+    @content;
+  }
+}

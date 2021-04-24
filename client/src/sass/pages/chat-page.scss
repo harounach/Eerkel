@@ -1,0 +1,261 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+@use "../abstracts/animations" as anim;
+
+// chat-page
+.chat-page {
+  width: 100%;
+  height: 100%;
+
+  // large-tablet
+  @include mixins.large-tablet {
+    height: 100%;
+  }
+
+  // chat-page__body
+  &__body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    // large-tablet
+    @include mixins.large-tablet {
+      height: 100%;
+      justify-content: space-between;
+    }
+  }
+
+  // chat-page__header
+  &__header {
+    flex-shrink: 0;
+    position: fixed;
+    top: 0;
+    // z-index
+    @include mixins.z-index("appbar");
+
+    // large-tablet
+    @include mixins.large-tablet {
+      position: static;
+      // z-index
+      @include mixins.z-index("no-elevation");
+    }
+  }
+
+  // chat-page__main
+  &__main {
+    width: 100%;
+    margin: 3.5rem 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+
+    flex-grow: 1;
+    // large-tablet
+    @include mixins.large-tablet {
+      width: 90%;
+      height: calc(100% - 9.5rem);
+      flex-direction: row-reverse;
+      margin: 0;
+    }
+
+    // xlarge-tablet
+    @include mixins.xlarge-tablet {
+      width: 85%;
+    }
+
+    // small-desktop
+    @include mixins.small-desktop {
+      width: 80%;
+    }
+
+    // desktop
+    @include mixins.desktop {
+      width: 75%;
+    }
+
+    // large-desktop
+    @include mixins.large-desktop {
+      width: 75%;
+    }
+  }
+
+  // chat-page__messages
+  &__messages {
+    width: 100%;
+
+    // tablet
+    @include mixins.tablet {
+      padding: 1.5rem 5%;
+    }
+
+    // large-tablet
+    @include mixins.large-tablet {
+      width: 65%;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  // chat-page__message-wrapper
+  &__message-wrapper {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 64px;
+
+    background-color: variables.$surface-color;
+    @include mixins.surface-shadow;
+
+    // large-tablet
+    @include mixins.large-tablet {
+      height: 80%;
+      overflow-y: auto;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+  }
+
+  // chat-page__list
+  &__list {
+    // large-tablet
+    @include mixins.large-tablet {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    // xlarge-tablet
+    @include mixins.xlarge-tablet {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+    // small-desktop
+    @include mixins.small-desktop {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    // desktop
+    @include mixins.desktop {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+    }
+
+    // large-desktop
+    @include mixins.large-desktop {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+  }
+
+  // chat-page__chat-form
+  &__chat-form {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    // z-index
+    @include mixins.z-index("bottom-bar");
+
+    // large-tablet
+    @include mixins.large-tablet {
+      position: static;
+      // box-shadow
+      @include mixins.surface-shadow;
+      // z-index
+      @include mixins.z-index("no-elevation");
+      margin-top: 1rem;
+    }
+  }
+
+  // chat-page__friends
+  &__friends {
+    width: calc(100% - 3.5rem);
+    height: 100%;
+    position: fixed;
+
+    // animaiton start
+    @include anim.animation-start {
+      transition: anim.$transform-transition;
+      will-change: transform;
+      // z-index
+      @include mixins.z-index("drawer");
+      transform: translateX(-100%);
+    }
+
+    // chat-content__friends--open
+    &--open {
+      // animation end
+      @include anim.animation-end {
+        transform: translateX(0);
+      }
+    }
+
+    // tablet
+    @include mixins.tablet {
+      width: 70%;
+    }
+
+    // large-tablet
+    @include mixins.large-tablet {
+      width: 35%;
+      position: static;
+      transform: translateX(0);
+      padding: 1rem;
+      // z-index
+      @include mixins.z-index("no-elevation");
+    }
+  }
+
+  // chat-page__chat-friends
+  &__chat-friends {
+    width: 100%;
+    height: calc(100% - 3.5rem);
+    padding: 1rem;
+    background-color: variables.$surface-color;
+    display: flex;
+    flex-direction: column;
+
+    // large-tablet
+    @include mixins.large-tablet {
+      height: 100%;
+      // box-shadow
+      @include mixins.surface-shadow;
+    }
+  }
+
+  // chat-page__subtitle
+  &__subtitle {
+    flex-shrink: 0;
+  }
+
+  // chat-page__friends-list
+  &__friends-list {
+    overflow-y: auto;
+  }
+
+  // chat-page__btn-wrapper
+  &__btn-wrapper {
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: auto;
+  }
+
+  // chat-page__footer
+  &__footer {
+    margin-top: auto;
+    // hide on mobile
+    display: none;
+
+    // large-tablet
+    @include mixins.large-tablet {
+      display: flex;
+      margin-top: 0;
+    }
+  }
+}
