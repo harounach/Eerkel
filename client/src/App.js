@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import Home from "./Pages/Home";
-import Profile from "./Pages/Profile/Profile";
+import Profile from "./Pages/Profile";
 import FriendList from "./Pages/FriendList/FriendList";
 
 function App() {
