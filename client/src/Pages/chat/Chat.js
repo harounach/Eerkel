@@ -2,6 +2,8 @@ import React from "react";
 
 import Appbar from "../../Components/appbar/Appbar";
 import Footer from "../../Components/footer/Footer";
+import MessageList from "../../Components/chatroom/MessageList";
+import Message from "../../Components/chatroom/Message";
 
 const Chat = () => {
   return (
@@ -13,94 +15,25 @@ const Chat = () => {
       <main className="chat-page__main main">
         <section className="chat-page__messages">
           <div className="chat-page__message-wrapper">
-            <div className="chat-page__list message-list">
+            <MessageList>
               {/* item 1 */}
-              <div className="message">
-                <div className="message__avatar-wrapper">
-                  <div className="message__avatar">
-                    <span className="message__avatar-name">J</span>
-                  </div>
-                </div>
-                <div className="message__message-buble">
-                  <p className="message__text">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Cumque vero voluptate cum. Fugiat rem ex quo provident!
-                  </p>
-                </div>
-              </div>
+              <Message />
+
               {/* item 2 */}
-              <div className="message message--right">
-                <div className="message__avatar-wrapper">
-                  <div className="message__avatar">
-                    <span className="message__avatar-name">F1</span>
-                  </div>
-                </div>
-                <div className="message__message-buble">
-                  <p className="message__text">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Cumque vero voluptate cum. Fugiat rem ex quo provident!
-                  </p>
-                </div>
-              </div>
+              <Message />
 
               {/* item 3 */}
-              <div className="message">
-                <div className="message__avatar-wrapper">
-                  <div className="message__avatar">
-                    <span className="message__avatar-name">J</span>
-                  </div>
-                </div>
-                <div className="message__message-buble">
-                  <p className="message__text">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Cumque vero voluptate cum. Fugiat rem ex quo provident!
-                  </p>
-                </div>
-              </div>
+              <Message />
+
               {/* item 4 */}
-              <div className="message message--right">
-                <div className="message__avatar-wrapper">
-                  <div className="message__avatar">
-                    <span className="message__avatar-name">F1</span>
-                  </div>
-                </div>
-                <div className="message__message-buble">
-                  <p className="message__text">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Cumque vero voluptate cum. Fugiat rem ex quo provident!
-                  </p>
-                </div>
-              </div>
+              <Message />
 
               {/* item 5 */}
-              <div className="message">
-                <div className="message__avatar-wrapper">
-                  <div className="message__avatar">
-                    <span className="message__avatar-name">J</span>
-                  </div>
-                </div>
-                <div className="message__message-buble">
-                  <p className="message__text">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Cumque vero voluptate cum. Fugiat rem ex quo provident!
-                  </p>
-                </div>
-              </div>
+              <Message />
+
               {/* item 6 */}
-              <div className="message message--right">
-                <div className="message__avatar-wrapper">
-                  <div className="message__avatar">
-                    <span className="message__avatar-name">F1</span>
-                  </div>
-                </div>
-                <div className="message__message-buble">
-                  <p className="message__text">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Cumque vero voluptate cum. Fugiat rem ex quo provident!
-                  </p>
-                </div>
-              </div>
-            </div>
+              <Message />
+            </MessageList>
           </div>
 
           {/* chat form */}
