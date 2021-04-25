@@ -1,35 +1,14 @@
 import React from "react";
 
+import Appbar from "../../Components/appbar/Appbar";
+import Footer from "../../Components/footer/Footer";
+import Hero from "../../Components/hero/Hero";
+import heroImage from "./Profile-Illustration.svg";
+
 const Profile = () => {
   return (
     <div>
-      <header className="profile-page__header appbar appbar--space-between">
-        {/* logo */}
-        <div className="appbar__section">
-          <a className="logo" href="home.html">
-            <img className="logo__img" src="./images/App-Icon.svg" alt="" />
-          </a>
-        </div>
-
-        {/* Profile dropdown */}
-        <div className="appbar__section appbar__section--right">
-          <div className="profile-dropdown">
-            <div className="profile-dropdown__img-wrapper">
-              <div className="profile-dropdown__img">
-                <span className="profile-dropdown__name">J</span>
-              </div>
-            </div>
-            <div className="profile-dropdown__content">
-              <a href="/profile" className="profile-dropdown__link">
-                Profile
-              </a>
-              <a href="/logout" className="profile-dropdown__link">
-                Logout
-              </a>
-            </div>
-          </div>
-        </div>
-      </header>
+      <Appbar />
       <main className="profile-page__main main">
         <section className="profile-page__form">
           <h1 className="title">Profile</h1>
@@ -108,16 +87,10 @@ const Profile = () => {
           </form>
         </section>
         <section className="profile-page__hero-wrapper">
-          <img
-            className="profile-page__hero hero"
-            src="./images/Profile-Illustration.svg"
-            alt=""
-          />
+          <Hero src={heroImage} />
         </section>
       </main>
-      <footer className="profile-page__footer footer">
-        <p className="copyright-notice">Copyright Information Example</p>
-      </footer>
+      <Footer />
     </div>
   );
 };
