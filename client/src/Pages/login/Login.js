@@ -54,7 +54,7 @@ const Login = () => {
           <Hero src={heroImage} />
           <p className="goto-auth">
             Don't have an account?
-            <a className="goto-auth__link" href="./register.html">
+            <a className="goto-auth__link" href="/register">
               Register
             </a>
           </p>

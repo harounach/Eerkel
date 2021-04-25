@@ -1,16 +1,13 @@
 import React from "react";
+import Appbar from "../../Components/appbar/Appbar";
+import Footer from "../../Components/footer/Footer";
+import Hero from "../../Components/hero/Hero";
+import heroImage from "./Auth-Illustration.svg";
 
 const Register = () => {
   return (
     <div>
-      <header className="register-page__header appbar">
-        {/* logo */}
-        <div className="appbar__section">
-          <a className="logo" href="home.html">
-            <img className="logo__img" src="./images/App-Icon.svg" alt="" />
-          </a>
-        </div>
-      </header>
+      <Appbar />
       <main className="register-page__main main">
         <section className="register-page__form">
           <h1 className="title">Register</h1>
@@ -84,22 +81,17 @@ const Register = () => {
         </section>
 
         <section className="register-page__hero-wrapper">
-          <img
-            className="register-page__hero hero"
-            src="./images/Auth-Illustration.svg"
-            alt=""
-          />
+          {/* hero */}
+          <Hero src={heroImage} />
           <p className="goto-auth">
             Already have an account?
-            <a className="goto-auth__link" href="./login.html">
+            <a className="goto-auth__link" href="login">
               Login
             </a>
           </p>
         </section>
       </main>
-      <footer className="register-page__footer footer">
-        <p className="copyright-notice">Copyright Information Example</p>
-      </footer>
+      <Footer />
     </div>
   );
 };
