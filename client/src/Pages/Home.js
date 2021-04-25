@@ -4,6 +4,8 @@ import React from "react";
 import Appbar from "../Components/appbar/Appbar";
 import Footer from "../Components/footer/Footer";
 
+import LinkButton from "../Components/button/LinkButton";
+
 const Home = () => {
   return (
     <div>
@@ -17,9 +19,7 @@ const Home = () => {
             family, share ideas, and find new inspirations!
           </p>
           <div className="home-page__btn-wrapper btn-wrapper">
-            <a className="btn" href="/login">
-              Get Started
-            </a>
+            <LinkButton url="/login">Get Started</LinkButton>
           </div>
         </section>
 
