@@ -35,7 +35,7 @@ const Profile = () => {
           <h1 className="title">Profile</h1>
           <form className="form">
             <div className="form__section">
-              <label className="form__label" for="username">
+              <label className="form__label" htmlFor="username">
                 Username
               </label>
               <input
@@ -50,7 +50,7 @@ const Profile = () => {
             </div>
 
             <div className="form__section">
-              <label className="form__label" for="email">
+              <label className="form__label" htmlFor="email">
                 Email
               </label>
               <input
@@ -63,7 +63,7 @@ const Profile = () => {
             </div>
 
             <div className="form__section">
-              <label className="form__label" for="password">
+              <label className="form__label" htmlFor="password">
                 Password
               </label>
               <input
@@ -78,7 +78,7 @@ const Profile = () => {
             </div>
 
             <div className="form__section">
-              <label className="form__label" for="passwordConfirm">
+              <label className="form__label" htmlFor="passwordConfirm">
                 Password
               </label>
               <input
