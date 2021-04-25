@@ -3,7 +3,7 @@ import appIcon from "./App-Icon.svg";
 
 const Logo = () => {
   return (
-    <a className="logo" href="home.html">
+    <a className="logo" href="/">
       <img className="logo__img" src={appIcon} alt="" />
     </a>
   );

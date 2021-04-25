@@ -1,12 +1,12 @@
 import "./App.scss";
 import React, { Fragment } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Home from "./Pages/Home";
-import Login from "./Pages/Login";
-import Register from "./Pages/Register";
-import Profile from "./Pages/Profile";
-import FriendsList from "./Pages/FriendsList";
-import Chat from "./Pages/Chat";
+import Home from "./Pages/home/Home";
+import Login from "./Pages/login/Login";
+import Register from "./Pages/register/Register";
+import Profile from "./Pages/profile/Profile";
+import FriendsList from "./Pages/friendslist/FriendsList";
+import Chat from "./Pages/chat/Chat";
 
 function App() {
   return (

@@ -1,10 +1,13 @@
 import { Fragment } from "react";
 
 import React from "react";
-import Appbar from "../Components/appbar/Appbar";
-import Footer from "../Components/footer/Footer";
+import Appbar from "../../Components/appbar/Appbar";
+import Footer from "../../Components/footer/Footer";
 
-import LinkButton from "../Components/button/LinkButton";
+import LinkButton from "../../Components/button/LinkButton";
+
+import Hero from "../../Components/hero/Hero";
+import heroImage from "./Home-Illustration.svg";
 
 const Home = () => {
   return (
@@ -25,7 +28,7 @@ const Home = () => {
 
         <section className="home-page__hero-wrapper">
           {/* hero */}
-          <img className="hero" src="./images/Home-Illustration.svg" alt="" />
+          <Hero src={heroImage} />
         </section>
       </main>
       <Footer />
