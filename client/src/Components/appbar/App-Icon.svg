@@ -1,0 +1,12 @@
+<svg width="192" height="192" viewBox="0 0 192 192" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="App-Icon">
+<circle id="outer-circle" cx="96" cy="96" r="96" fill="white"/>
+<circle id="innner-circle" cx="96" cy="96" r="88" fill="#003049"/>
+<g id="foreground">
+<rect id="left-bar" x="50" y="54" width="16" height="84" rx="8" fill="white"/>
+<rect id="top-bar" x="90" y="70" width="16" height="52" rx="8" transform="rotate(-90 90 70)" fill="white"/>
+<rect id="middle-bar" x="74" y="104" width="16" height="52" rx="8" transform="rotate(-90 74 104)" fill="white"/>
+<rect id="bottom-bar" x="90" y="138" width="16" height="52" rx="8" transform="rotate(-90 90 138)" fill="white"/>
+</g>
+</g>
+</svg>

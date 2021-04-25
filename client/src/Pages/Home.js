@@ -1,18 +1,12 @@
 import { Fragment } from "react";
 
 import React from "react";
+import Appbar from "../Components/appbar/Appbar";
 
 const Home = () => {
   return (
-    <Fragment>
-      <header className="home-page__header appbar">
-        {/* logo */}
-        <div className="appbar__section">
-          <a className="logo" href="home.html">
-            <img className="logo__img" src="./images/App-Icon.svg" alt="" />
-          </a>
-        </div>
-      </header>
+    <div>
+      <Appbar />
       <main className="home-page__main main">
         <section className="home-page__copy">
           {/* heading */}
@@ -36,7 +30,7 @@ const Home = () => {
       <footer className="home-page__footer footer">
         <p className="copyright-notice">Copyright Information Example</p>
       </footer>
-    </Fragment>
+    </div>
   );
 };
 
