@@ -1,5 +1,3 @@
-import { Fragment } from "react";
-
 import React from "react";
 import Appbar from "../../Components/appbar/Appbar";
 import Footer from "../../Components/footer/Footer";
@@ -11,7 +9,7 @@ import heroImage from "./Home-Illustration.svg";
 
 const Home = () => {
   return (
-    <div>
+    <div className="home-page__body">
       <Appbar />
       <main className="home-page__main main">
         <section className="home-page__copy">

@@ -1,16 +1,13 @@
 import React from "react";
+import Appbar from "../../Components/appbar/Appbar";
+import Footer from "../../Components/footer/Footer";
+import Hero from "../../Components/hero/Hero";
+import heroImage from "./Auth-Illustration.svg";
 
 const Login = () => {
   return (
     <div>
-      <header className="login-page__header appbar">
-        {/* logo */}
-        <div className="appbar__section">
-          <a className="logo" href="home.html">
-            <img className="logo__img" src="./images/App-Icon.svg" alt="" />
-          </a>
-        </div>
-      </header>
+      <Appbar />
       <main className="login-page__main main">
         <section className="login-page__form">
           <h1 className="title">Login</h1>
@@ -53,11 +50,8 @@ const Login = () => {
           </form>
         </section>
         <section className="login-page__hero-wrapper">
-          <img
-            className="login-page__hero hero"
-            src="./images/Auth-Illustration.svg"
-            alt=""
-          />
+          {/* hero */}
+          <Hero src={heroImage} />
           <p className="goto-auth">
             Don't have an account?
             <a className="goto-auth__link" href="./register.html">
@@ -66,9 +60,7 @@ const Login = () => {
           </p>
         </section>
       </main>
-      <footer className="login-page__footer footer">
-        <p className="copyright-notice">Copyright Information Example</p>
-      </footer>
+      <Footer />
     </div>
   );
 };

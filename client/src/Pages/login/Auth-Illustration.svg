@@ -1,0 +1,22 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Auth-Illustration">
+<g id="phone">
+<circle id="background" cx="256" cy="256" r="256" fill="#008AD1"/>
+<rect id="outer-frame" x="144" y="44" width="224" height="424" rx="8" fill="#4F4D4D"/>
+<rect id="inner-frame" x="148" y="48" width="216" height="416" rx="4" fill="#434343"/>
+<rect id="screen" x="156" y="84" width="200" height="344" rx="2" fill="#EFEDED"/>
+<rect id="speaker" x="240" y="66" width="32" height="4" rx="2" fill="#7C7777"/>
+<circle id="front-camera" cx="256" cy="57" r="2" fill="#7C7777"/>
+<circle id="front-flashlight" cx="224" cy="68" r="2" fill="#7C7777"/>
+<circle id="navigation" cx="256" cy="446" r="14" fill="#9C9B9B"/>
+<path id="power-btn" d="M141 115C141 113.895 141.895 113 143 113H144V131H143C141.895 131 141 130.105 141 129V115Z" fill="#5A5959"/>
+<path id="volume-up-btn" d="M141 141C141 139.895 141.895 139 143 139H144V162H143C141.895 162 141 161.105 141 160V141Z" fill="#5A5959"/>
+<path id="volume-down-btn" d="M141 166C141 164.895 141.895 164 143 164H144V187H143C141.895 187 141 186.105 141 185V166Z" fill="#5A5959"/>
+</g>
+<g id="lock">
+<circle id="lock-outer" cx="256" cy="213" r="55" fill="#B0B0B0"/>
+<circle id="lock-inner" cx="256" cy="213" r="35" fill="#EFEDED"/>
+<rect id="lock-body" x="173" y="213" width="166" height="140" fill="#EF233C"/>
+</g>
+</g>
+</svg>
