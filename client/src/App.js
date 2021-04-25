@@ -5,7 +5,7 @@ import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import Home from "./Pages/Home";
 import Profile from "./Pages/Profile";
-import FriendList from "./Pages/FriendList/FriendList";
+import FriendsList from "./Pages/FriendsList";
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
         <Route path="/register" component={Register} />
         <Route path="/home" component={Home} />
         <Route path="/profile" component={Profile} />
-        <Route path="/friendlist" component={FriendList} />
+        <Route path="/friendslist" component={FriendsList} />
       </Fragment>
     </Router>
   );
