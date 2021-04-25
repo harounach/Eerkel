@@ -4,6 +4,8 @@ import Appbar from "../../Components/appbar/Appbar";
 import Footer from "../../Components/footer/Footer";
 import MessageList from "../../Components/chatroom/MessageList";
 import Message from "../../Components/chatroom/Message";
+import ChatFriendsList from "../../Components/chatroom/ChatFriendsList";
+import ChatFriend from "../../Components/chatroom/ChatFriend";
 
 const Chat = () => {
   return (
@@ -57,124 +59,34 @@ const Chat = () => {
           <div className="chat-page__chat-friends">
             <h2 className="chat-page__subtitle subtitle">Friends List</h2>
             <div className="chat-page__friends-list">
-              <div className="chat-friends-list">
+              <ChatFriendsList>
                 {/* item 1 */}
-                <div className="chat-friend chat-friend--active">
-                  <div className="chat-friend__avatar-status">
-                    <div className="chat-friend__avatar-wrapper">
-                      <div className="chat-friend__avatar">
-                        <span className="chat-friend__avatar-name">F1</span>
-                      </div>
-                      <span className="chat-friend__status"></span>
-                    </div>
-                  </div>
-                  <span className="chat-friend__name">Friend 1</span>
-                </div>
+                <ChatFriend />
 
                 {/* item 2 */}
-                <div className="chat-friend chat-friend--offline">
-                  <div className="chat-friend__avatar-status">
-                    <div className="chat-friend__avatar-wrapper">
-                      <div className="chat-friend__avatar">
-                        <span className="chat-friend__avatar-name">F2</span>
-                      </div>
-                      <span className="chat-friend__status"></span>
-                    </div>
-                  </div>
-                  <span className="chat-friend__name">Friend 2</span>
-                </div>
+                <ChatFriend />
 
                 {/* item 3 */}
-                <div className="chat-friend">
-                  <div className="chat-friend__avatar-status">
-                    <div className="chat-friend__avatar-wrapper">
-                      <div className="chat-friend__avatar">
-                        <span className="chat-friend__avatar-name">F3</span>
-                      </div>
-                      <span className="chat-friend__status"></span>
-                    </div>
-                  </div>
-                  <span className="chat-friend__name">Friend 3</span>
-                </div>
+                <ChatFriend />
 
                 {/* item 4 */}
-                <div className="chat-friend">
-                  <div className="chat-friend__avatar-status">
-                    <div className="chat-friend__avatar-wrapper">
-                      <div className="chat-friend__avatar">
-                        <span className="chat-friend__avatar-name">F4</span>
-                      </div>
-                      <span className="chat-friend__status"></span>
-                    </div>
-                  </div>
-                  <span className="chat-friend__name">Friend 4</span>
-                </div>
+                <ChatFriend />
 
                 {/* item 5 */}
-                <div className="chat-friend">
-                  <div className="chat-friend__avatar-status">
-                    <div className="chat-friend__avatar-wrapper">
-                      <div className="chat-friend__avatar">
-                        <span className="chat-friend__avatar-name">F5</span>
-                      </div>
-                      <span className="chat-friend__status"></span>
-                    </div>
-                  </div>
-                  <span className="chat-friend__name">Friend 5</span>
-                </div>
+                <ChatFriend />
 
                 {/* item 6 */}
-                <div className="chat-friend chat-friend--offline">
-                  <div className="chat-friend__avatar-status">
-                    <div className="chat-friend__avatar-wrapper">
-                      <div className="chat-friend__avatar">
-                        <span className="chat-friend__avatar-name">F6</span>
-                      </div>
-                      <span className="chat-friend__status"></span>
-                    </div>
-                  </div>
-                  <span className="chat-friend__name">Friend 6</span>
-                </div>
+                <ChatFriend />
 
                 {/* item 7 */}
-                <div className="chat-friend">
-                  <div className="chat-friend__avatar-status">
-                    <div className="chat-friend__avatar-wrapper">
-                      <div className="chat-friend__avatar">
-                        <span className="chat-friend__avatar-name">F7</span>
-                      </div>
-                      <span className="chat-friend__status"></span>
-                    </div>
-                  </div>
-                  <span className="chat-friend__name">Friend 7</span>
-                </div>
+                <ChatFriend />
 
                 {/* item 8 */}
-                <div className="chat-friend chat-friend--offline">
-                  <div className="chat-friend__avatar-status">
-                    <div className="chat-friend__avatar-wrapper">
-                      <div className="chat-friend__avatar">
-                        <span className="chat-friend__avatar-name">F8</span>
-                      </div>
-                      <span className="chat-friend__status"></span>
-                    </div>
-                  </div>
-                  <span className="chat-friend__name">Friend 8</span>
-                </div>
+                <ChatFriend />
 
                 {/* item 9 */}
-                <div className="chat-friend">
-                  <div className="chat-friend__avatar-status">
-                    <div className="chat-friend__avatar-wrapper">
-                      <div className="chat-friend__avatar">
-                        <span className="chat-friend__avatar-name">F9</span>
-                      </div>
-                      <span className="chat-friend__status"></span>
-                    </div>
-                  </div>
-                  <span className="chat-friend__name">Friend 9</span>
-                </div>
-              </div>
+                <ChatFriend />
+              </ChatFriendsList>
             </div>
 
             <div className="chat-page__btn-wrapper btn-wrapper">
