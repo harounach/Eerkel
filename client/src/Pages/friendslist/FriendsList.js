@@ -1,36 +1,13 @@
 import React from "react";
 
+import Appbar from "../../Components/appbar/Appbar";
+import Footer from "../../Components/footer/Footer";
+
 const FriendsList = () => {
   return (
     <div>
       {/* appbar */}
-      <header className="friendslist-page__header appbar appbar--space-between">
-        {/* logo */}
-        <div className="appbar__section">
-          <a className="logo" href="home.html">
-            <img className="logo__img" src="./images/App-Icon.svg" alt="" />
-          </a>
-        </div>
-
-        {/* Profile dropdown */}
-        <div className="appbar__section appbar__section--right">
-          <div className="profile-dropdown">
-            <div className="profile-dropdown__img-wrapper">
-              <div className="profile-dropdown__img">
-                <span className="profile-dropdown__name">J</span>
-              </div>
-            </div>
-            <div className="profile-dropdown__content">
-              <a href="#" className="profile-dropdown__link">
-                Profile
-              </a>
-              <a href="#" className="profile-dropdown__link">
-                Logout
-              </a>
-            </div>
-          </div>
-        </div>
-      </header>
+      <Appbar />
 
       {/* main */}
       <main className="friendslist-page__main main">
@@ -143,9 +120,7 @@ const FriendsList = () => {
       </main>
 
       {/* footer */}
-      <footer className="friendslist-page__footer footer">
-        <p className="copyright-notice">Copyright Information Example</p>
-      </footer>
+      <Footer />
     </div>
   );
 };
