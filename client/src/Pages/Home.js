@@ -2,6 +2,7 @@ import { Fragment } from "react";
 
 import React from "react";
 import Appbar from "../Components/appbar/Appbar";
+import Footer from "../Components/footer/Footer";
 
 const Home = () => {
   return (
@@ -27,9 +28,7 @@ const Home = () => {
           <img className="hero" src="./images/Home-Illustration.svg" alt="" />
         </section>
       </main>
-      <footer className="home-page__footer footer">
-        <p className="copyright-notice">Copyright Information Example</p>
-      </footer>
+      <Footer />
     </div>
   );
 };
