@@ -4,6 +4,9 @@ import Footer from "../../Components/footer/Footer";
 import Hero from "../../Components/hero/Hero";
 import heroImage from "./Auth-Illustration.svg";
 
+import Form from "../../Components/form/From";
+import FormSection from "../../Components/form/FormSection";
+
 const Register = () => {
   return (
     <div>
@@ -11,8 +14,8 @@ const Register = () => {
       <main className="register-page__main main">
         <section className="register-page__form">
           <h1 className="title">Register</h1>
-          <form className="form">
-            <div className="form__section">
+          <Form>
+            <FormSection>
               <label className="form__label" htmlFor="username">
                 Username
               </label>
@@ -25,9 +28,9 @@ const Register = () => {
               <p className="form__error form__error--username">
                 Username is invalid
               </p>
-            </div>
+            </FormSection>
 
-            <div className="form__section">
+            <FormSection>
               <label className="form__label" htmlFor="email">
                 Email
               </label>
@@ -38,9 +41,9 @@ const Register = () => {
                 name="email"
               />
               <p className="form__error form__error--email">Email is invalid</p>
-            </div>
+            </FormSection>
 
-            <div className="form__section">
+            <FormSection>
               <label className="form__label" htmlFor="password">
                 Password
               </label>
@@ -53,9 +56,9 @@ const Register = () => {
               <p className="form__error form__error--password">
                 Password is invalid
               </p>
-            </div>
+            </FormSection>
 
-            <div className="form__section">
+            <FormSection>
               <label className="form__label" htmlFor="passwordConfirm">
                 Password
               </label>
@@ -68,16 +71,16 @@ const Register = () => {
               <p className="form__error form__error--passwordConfirm">
                 password Confirmation is invalid
               </p>
-            </div>
+            </FormSection>
 
-            <div className="form__section">
+            <FormSection>
               <div className="register-page__btn-wrapper btn-wrapper">
                 <button className="btn" type="submit">
                   Register
                 </button>
               </div>
-            </div>
-          </form>
+            </FormSection>
+          </Form>
         </section>
 
         <section className="register-page__hero-wrapper">

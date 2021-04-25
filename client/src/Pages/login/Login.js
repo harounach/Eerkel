@@ -4,6 +4,9 @@ import Footer from "../../Components/footer/Footer";
 import Hero from "../../Components/hero/Hero";
 import heroImage from "./Auth-Illustration.svg";
 
+import Form from "../../Components/form/From";
+import FormSection from "../../Components/form/FormSection";
+
 const Login = () => {
   return (
     <div>
@@ -11,8 +14,8 @@ const Login = () => {
       <main className="login-page__main main">
         <section className="login-page__form">
           <h1 className="title">Login</h1>
-          <form className="form">
-            <div className="form__section">
+          <Form>
+            <FormSection>
               <label className="form__label" htmlFor="email">
                 Email
               </label>
@@ -23,9 +26,9 @@ const Login = () => {
                 name="email"
               />
               <p className="form__error form__error--email">Email is invalid</p>
-            </div>
+            </FormSection>
 
-            <div className="form__section">
+            <FormSection>
               <label className="form__label" htmlFor="password">
                 Password
               </label>
@@ -38,16 +41,16 @@ const Login = () => {
               <p className="form__error form__error--password">
                 Password is invalid
               </p>
-            </div>
+            </FormSection>
 
-            <div className="form__section">
+            <FormSection>
               <div className="login-page__btn-wrapper btn-wrapper">
                 <button className="btn" type="submit">
                   Login
                 </button>
               </div>
-            </div>
-          </form>
+            </FormSection>
+          </Form>
         </section>
         <section className="login-page__hero-wrapper">
           {/* hero */}
