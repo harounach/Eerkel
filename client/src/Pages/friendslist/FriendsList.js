@@ -2,6 +2,8 @@ import React from "react";
 
 import Appbar from "../../Components/appbar/Appbar";
 import Footer from "../../Components/footer/Footer";
+import Friends from "../../Components/friends/Friends";
+import FriendsItem from "../../Components/friends/FriendsItem";
 
 const FriendsList = () => {
   return (
@@ -30,92 +32,22 @@ const FriendsList = () => {
         </section>
         <section className="friendslist-page__list">
           <h2 className="subtitle">Friends List</h2>
-          <div className="friends">
+          <Friends>
             {/* item 1 */}
-            <div className="friends__item">
-              <div className="friends__avatar">
-                <div className="friends__img">
-                  <span className="friends__img-name">F1</span>
-                </div>
-              </div>
-              <span className="friends__name">Friend 1</span>
-              <button className="btn btn--40 btn--rounded">
-                <img
-                  className="btn__icon"
-                  src="./images/add_white_24dp.svg"
-                  alt=""
-                />
-              </button>
-            </div>
+            <FriendsItem imgName="F1" name="Friend 1" />
 
             {/* item 2 */}
-            <div className="friends__item">
-              <div className="friends__avatar">
-                <div className="friends__img">
-                  <span className="friends__img-name">F2</span>
-                </div>
-              </div>
-              <span className="friends__name">Friend 2</span>
-              <button className="btn btn--40 btn--rounded">
-                <img
-                  className="btn__icon"
-                  src="./images/add_white_24dp.svg"
-                  alt=""
-                />
-              </button>
-            </div>
+            <FriendsItem imgName="F2" name="Friend 2" />
 
             {/* item 3 */}
-            <div className="friends__item friends__item--friend">
-              <div className="friends__avatar">
-                <div className="friends__img">
-                  <span className="friends__img-name">F3</span>
-                </div>
-              </div>
-              <span className="friends__name">Friend 3</span>
-              <button className="btn btn--40 btn--rounded">
-                <img
-                  className="btn__icon"
-                  src="./images/remove_white_24dp.svg"
-                  alt=""
-                />
-              </button>
-            </div>
+            <FriendsItem imgName="F3" name="Friend 3" />
 
             {/* item 4 */}
-            <div className="friends__item">
-              <div className="friends__avatar">
-                <div className="friends__img">
-                  <span className="friends__img-name">F4</span>
-                </div>
-              </div>
-              <span className="friends__name">Friend 4</span>
-              <button className="btn btn--40 btn--rounded">
-                <img
-                  className="btn__icon"
-                  src="./images/add_white_24dp.svg"
-                  alt=""
-                />
-              </button>
-            </div>
+            <FriendsItem imgName="F4" name="Friend 4" />
 
             {/* item 5 */}
-            <div className="friends__item friends__item--friend">
-              <div className="friends__avatar">
-                <div className="friends__img">
-                  <span className="friends__img-name">F5</span>
-                </div>
-              </div>
-              <span className="friends__name">Friend 5</span>
-              <button className="btn btn--40 btn--rounded">
-                <img
-                  className="btn__icon"
-                  src="./images/remove_white_24dp.svg"
-                  alt=""
-                />
-              </button>
-            </div>
-          </div>
+            <FriendsItem imgName="F5" name="Friend 5" />
+          </Friends>
         </section>
       </main>
 
