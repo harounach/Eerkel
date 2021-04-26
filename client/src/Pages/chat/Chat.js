@@ -9,6 +9,90 @@ import ChatFriend from "../../Components/chatroom/ChatFriend";
 
 import ChatForm from "../../Components/form/ChatForm";
 
+/* Placeholder data */
+const friendsData = [
+  /* item 1 */
+  {
+    id: 1,
+    imgName: "F1",
+    name: "Friend 1",
+    isOnline: true,
+    isActive: false,
+  },
+
+  /* item 2 */
+  {
+    id: 2,
+    imgName: "F2",
+    name: "Friend 2",
+    isOnline: false,
+    isActive: false,
+  },
+
+  /* item 3 */
+  {
+    id: 3,
+    imgName: "F3",
+    name: "Friend 3",
+    isOnline: true,
+    isActive: false,
+  },
+
+  /* item 4 */
+  {
+    id: 4,
+    imgName: "F4",
+    name: "Friend 4",
+    isOnline: true,
+    isActive: true,
+  },
+
+  /* item 5 */
+  {
+    id: 5,
+    imgName: "F5",
+    name: "Friend 5",
+    isOnline: true,
+    isActive: false,
+  },
+
+  /* item 6 */
+  {
+    id: 6,
+    imgName: "F6",
+    name: "Friend 6",
+    isOnline: true,
+    isActive: false,
+  },
+
+  /* item 7 */
+  {
+    id: 7,
+    imgName: "F7",
+    name: "Friend 7",
+    isOnline: true,
+    isActive: false,
+  },
+
+  /* item 8 */
+  {
+    id: 8,
+    imgName: "F8",
+    name: "Friend 8",
+    isOnline: false,
+    isActive: false,
+  },
+
+  /* item 9 */
+  {
+    id: 9,
+    imgName: "F9",
+    name: "Friend 9",
+    isOnline: false,
+    isActive: false,
+  },
+];
+
 const Chat = () => {
   return (
     <div>
@@ -48,32 +132,9 @@ const Chat = () => {
             <h2 className="chat-page__subtitle subtitle">Friends List</h2>
             <div className="chat-page__friends-list">
               <ChatFriendsList>
-                {/* item 1 */}
-                <ChatFriend />
-
-                {/* item 2 */}
-                <ChatFriend />
-
-                {/* item 3 */}
-                <ChatFriend />
-
-                {/* item 4 */}
-                <ChatFriend />
-
-                {/* item 5 */}
-                <ChatFriend />
-
-                {/* item 6 */}
-                <ChatFriend />
-
-                {/* item 7 */}
-                <ChatFriend />
-
-                {/* item 8 */}
-                <ChatFriend />
-
-                {/* item 9 */}
-                <ChatFriend />
+                {friendsData.map((user) => {
+                  return <ChatFriend key={user.id} user={user} />;
+                })}
               </ChatFriendsList>
             </div>
 
