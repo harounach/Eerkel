@@ -5,6 +5,12 @@ import Footer from "../../Components/footer/Footer";
 import Hero from "../../Components/hero/Hero";
 import heroImage from "./Profile-Illustration.svg";
 
+import Form from "../../Components/form/From";
+import FormSection from "../../Components/form/FormSection";
+
+import ButtonWrapper from "../../Components/button/ButtonWrapper";
+import Button from "../../Components/button/Button";
+
 const Profile = () => {
   return (
     <div>
@@ -12,8 +18,8 @@ const Profile = () => {
       <main className="profile-page__main main">
         <section className="profile-page__form">
           <h1 className="title">Profile</h1>
-          <form className="form">
-            <div className="form__section">
+          <Form>
+            <FormSection>
               <label className="form__label" htmlFor="username">
                 Username
               </label>
@@ -26,9 +32,9 @@ const Profile = () => {
               <p className="form__error form__error--username">
                 Username is invalid
               </p>
-            </div>
+            </FormSection>
 
-            <div className="form__section">
+            <FormSection className="form__section">
               <label className="form__label" htmlFor="email">
                 Email
               </label>
@@ -39,9 +45,9 @@ const Profile = () => {
                 name="email"
                 disabled
               />
-            </div>
+            </FormSection>
 
-            <div className="form__section">
+            <FormSection className="form__section">
               <label className="form__label" htmlFor="password">
                 Password
               </label>
@@ -54,9 +60,9 @@ const Profile = () => {
               <p className="form__error form__error--password">
                 Password is invalid
               </p>
-            </div>
+            </FormSection>
 
-            <div className="form__section">
+            <FormSection className="form__section">
               <label className="form__label" htmlFor="passwordConfirm">
                 Password
               </label>
@@ -69,22 +75,18 @@ const Profile = () => {
               <p className="form__error form__error--passwordConfirm">
                 password Confirmation is invalid
               </p>
-            </div>
+            </FormSection>
 
-            <div className="form__section">
-              <div className="profile-page__btn-wrapper btn-wrapper">
-                <button className="btn" type="submit">
-                  Update
-                </button>
-                <button className="btn" type="submit">
-                  Remove
-                </button>
-              </div>
-            </div>
-            <div className="form__section">
+            <FormSection className="form__section">
+              <ButtonWrapper classNames="profile-page__btn-wrapper">
+                <Button>Update</Button>
+                <Button>Remove</Button>
+              </ButtonWrapper>
+            </FormSection>
+            <FormSection className="form__section">
               <p className="form__message">Update Successful</p>
-            </div>
-          </form>
+            </FormSection>
+          </Form>
         </section>
         <section className="profile-page__hero-wrapper">
           <Hero classNames="profile-page__hero" src={heroImage} />
