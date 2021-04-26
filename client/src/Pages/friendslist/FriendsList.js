@@ -5,6 +5,8 @@ import Footer from "../../Components/footer/Footer";
 import Friends from "../../Components/friends/Friends";
 import FriendsItem from "../../Components/friends/FriendsItem";
 
+import SearchForm from "../../Components/form/SearchForm";
+
 const friendsData = [
   /* item 1 */
   {
@@ -56,21 +58,7 @@ const FriendsList = () => {
       {/* main */}
       <main className="friendslist-page__main main">
         <section className="friendslist-page__form">
-          <form className="seach-form">
-            <input
-              className="seach-form__input-control"
-              id="search"
-              type="text"
-              name="search"
-            />
-            <button className="btn btn--search" type="submit">
-              <img
-                className="btn__icon"
-                src="./images/search_white_24dp.svg"
-                alt=""
-              />
-            </button>
-          </form>
+          <SearchForm />
         </section>
         <section className="friendslist-page__list">
           <h2 className="subtitle">Friends List</h2>
