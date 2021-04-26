@@ -1,17 +1,21 @@
 import React from "react";
-import btnIcon from "./add_white_24dp.svg";
+import Button from "../button/Button";
+import BtnIcon from "../button/BtnIcon";
+
 const FriendsItem = (props) => {
+  const classNames = props.user.isFriend ? " friends__item--friend" : "";
+  const iconType = props.user.isFriend ? "remove" : "add";
   return (
-    <div className="friends__item">
+    <div className={"friends__item" + classNames}>
       <div className="friends__avatar">
         <div className="friends__img">
-          <span className="friends__img-name">{props.imgName}</span>
+          <span className="friends__img-name">{props.user.imgName}</span>
         </div>
       </div>
-      <span className="friends__name">{props.name}</span>
-      <button className="btn btn--40 btn--rounded">
-        <img className="btn__icon" src={btnIcon} alt="" />
-      </button>
+      <span className="friends__name">{props.user.name}</span>
+      <Button classNames="btn--40 btn--rounded">
+        <BtnIcon icon={iconType} />
+      </Button>
     </div>
   );
 };
