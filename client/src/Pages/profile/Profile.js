@@ -87,7 +87,7 @@ const Profile = () => {
           </form>
         </section>
         <section className="profile-page__hero-wrapper">
-          <Hero src={heroImage} />
+          <Hero classNames="profile-page__hero" src={heroImage} />
         </section>
       </main>
       <Footer />

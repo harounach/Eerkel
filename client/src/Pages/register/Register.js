@@ -87,7 +87,7 @@ const Register = () => {
 
         <section className="register-page__hero-wrapper">
           {/* hero */}
-          <Hero src={heroImage} />
+          <Hero classNames="register-page__hero" src={heroImage} />
           <p className="goto-auth">
             Already have an account?
             <LinkTextButton url="/login">Login</LinkTextButton>
