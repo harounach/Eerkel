@@ -7,6 +7,10 @@ import heroImage from "./Auth-Illustration.svg";
 import Form from "../../Components/form/From";
 import FormSection from "../../Components/form/FormSection";
 
+import ButtonWrapper from "../../Components/button/ButtonWrapper";
+import Button from "../../Components/button/Button";
+import LinkTextButton from "../../Components/button/LinkTextButton";
+
 const Register = () => {
   return (
     <div>
@@ -74,11 +78,9 @@ const Register = () => {
             </FormSection>
 
             <FormSection>
-              <div className="register-page__btn-wrapper btn-wrapper">
-                <button className="btn" type="submit">
-                  Register
-                </button>
-              </div>
+              <ButtonWrapper classNames="register-page__btn-wrapper">
+                <Button>Register</Button>
+              </ButtonWrapper>
             </FormSection>
           </Form>
         </section>
@@ -88,9 +90,7 @@ const Register = () => {
           <Hero src={heroImage} />
           <p className="goto-auth">
             Already have an account?
-            <a className="goto-auth__link" href="login">
-              Login
-            </a>
+            <LinkTextButton url="/login">Login</LinkTextButton>
           </p>
         </section>
       </main>
