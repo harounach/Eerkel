@@ -13,7 +13,7 @@ import LinkTextButton from "../../Components/button/LinkTextButton";
 
 const Login = () => {
   return (
-    <div>
+    <div className="login-page__body">
       <Appbar />
       <main className="login-page__main main">
         <section className="login-page__form">

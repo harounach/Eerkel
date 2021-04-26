@@ -13,7 +13,7 @@ import LinkTextButton from "../../Components/button/LinkTextButton";
 
 const Register = () => {
   return (
-    <div>
+    <div className="register-page__body">
       <Appbar />
       <main className="register-page__main main">
         <section className="register-page__form">

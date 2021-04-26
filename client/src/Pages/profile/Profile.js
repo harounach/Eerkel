@@ -13,7 +13,7 @@ import Button from "../../Components/button/Button";
 
 const Profile = () => {
   return (
-    <div>
+    <div className="profile-page__body">
       <Appbar />
       <main className="profile-page__main main">
         <section className="profile-page__form">

@@ -153,7 +153,7 @@ const messagesData = [
 
 const Chat = () => {
   return (
-    <div>
+    <div className="chat-page__body">
       {/* appbar */}
       <Appbar />
 

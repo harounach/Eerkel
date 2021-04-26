@@ -51,7 +51,7 @@ const friendsData = [
 
 const FriendsList = () => {
   return (
-    <div>
+    <div className="friendslist-page__body">
       {/* appbar */}
       <Appbar />
 
