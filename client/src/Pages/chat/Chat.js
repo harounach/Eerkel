@@ -7,6 +7,8 @@ import Message from "../../Components/chatroom/Message";
 import ChatFriendsList from "../../Components/chatroom/ChatFriendsList";
 import ChatFriend from "../../Components/chatroom/ChatFriend";
 
+import ChatForm from "../../Components/form/ChatForm";
+
 const Chat = () => {
   return (
     <div>
@@ -39,21 +41,7 @@ const Chat = () => {
           </div>
 
           {/* chat form */}
-          <form className="chat-page__chat-form chat-form">
-            <input
-              className="chat-form__input-control"
-              id="message"
-              type="text"
-              name="message"
-            />
-            <button className="btn btn--search" type="submit">
-              <img
-                className="btn__icon"
-                src="./images/send_white_24dp.svg"
-                alt=""
-              />
-            </button>
-          </form>
+          <ChatForm classNames="chat-page__chat-form" />
         </section>
         <aside className="chat-page__friends">
           <div className="chat-page__chat-friends">
