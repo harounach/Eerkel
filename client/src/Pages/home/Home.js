@@ -2,6 +2,7 @@ import React from "react";
 import Appbar from "../../Components/appbar/Appbar";
 import Footer from "../../Components/footer/Footer";
 
+import ButtonWrapper from "../../Components/button/ButtonWrapper";
 import LinkButton from "../../Components/button/LinkButton";
 
 import Hero from "../../Components/hero/Hero";
@@ -19,9 +20,9 @@ const Home = () => {
             Eerkel is amazing social media app to make new friends, connect with
             family, share ideas, and find new inspirations!
           </p>
-          <div className="home-page__btn-wrapper btn-wrapper">
+          <ButtonWrapper classNames="home-page__btn-wrapper">
             <LinkButton url="/login">Get Started</LinkButton>
-          </div>
+          </ButtonWrapper>
         </section>
 
         <section className="home-page__hero-wrapper">
