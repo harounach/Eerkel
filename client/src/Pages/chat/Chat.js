@@ -8,6 +8,8 @@ import ChatFriendsList from "../../Components/chatroom/ChatFriendsList";
 import ChatFriend from "../../Components/chatroom/ChatFriend";
 
 import ChatForm from "../../Components/form/ChatForm";
+import ButtonWrapper from "../../Components/button/ButtonWrapper";
+import LinkButton from "../../Components/button/LinkButton";
 
 /* Placeholder data */
 const friendsData = [
@@ -138,11 +140,9 @@ const Chat = () => {
               </ChatFriendsList>
             </div>
 
-            <div className="chat-page__btn-wrapper btn-wrapper">
-              <a className="btn" href="#">
-                Find Friends
-              </a>
-            </div>
+            <ButtonWrapper classNames="chat-page__btn-wrapper">
+              <LinkButton url="/friendslist">Find Friends</LinkButton>
+            </ButtonWrapper>
           </div>
         </aside>
       </main>
