@@ -95,6 +95,62 @@ const friendsData = [
   },
 ];
 
+const messagesData = [
+  /* Message 1 */
+  {
+    id: 1,
+    isMine: true,
+    imgName: "J",
+    message:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque vero voluptate cum. Fugiat rem ex quo provident!",
+  },
+
+  /* Message 2 */
+  {
+    id: 2,
+    isMine: false,
+    imgName: "F1",
+    message:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque vero voluptate cum. Fugiat rem ex quo provident!",
+  },
+
+  /* Message 3 */
+  {
+    id: 3,
+    isMine: true,
+    imgName: "J",
+    message:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque vero voluptate cum. Fugiat rem ex quo provident!",
+  },
+
+  /* Message 4 */
+  {
+    id: 4,
+    isMine: false,
+    imgName: "F1",
+    message:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque vero voluptate cum. Fugiat rem ex quo provident!",
+  },
+
+  /* Message 5 */
+  {
+    id: 5,
+    isMine: true,
+    imgName: "J",
+    message:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque vero voluptate cum. Fugiat rem ex quo provident!",
+  },
+
+  /* Message 6 */
+  {
+    id: 6,
+    isMine: false,
+    imgName: "F1",
+    message:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque vero voluptate cum. Fugiat rem ex quo provident!",
+  },
+];
+
 const Chat = () => {
   return (
     <div>
@@ -106,23 +162,9 @@ const Chat = () => {
         <section className="chat-page__messages">
           <div className="chat-page__message-wrapper">
             <MessageList>
-              {/* item 1 */}
-              <Message />
-
-              {/* item 2 */}
-              <Message />
-
-              {/* item 3 */}
-              <Message />
-
-              {/* item 4 */}
-              <Message />
-
-              {/* item 5 */}
-              <Message />
-
-              {/* item 6 */}
-              <Message />
+              {messagesData.map((message) => {
+                return <Message key={message.id} message={message} />;
+              })}
             </MessageList>
           </div>
 
