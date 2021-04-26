@@ -155,7 +155,7 @@ const Chat = () => {
   return (
     <div className="chat-page__body">
       {/* appbar */}
-      <Appbar />
+      <Appbar classNames="chat-page__header" />
 
       {/* main */}
       <main className="chat-page__main main">

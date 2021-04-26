@@ -3,9 +3,10 @@ import MenuButton from "./MenuButton";
 import Logo from "./Logo";
 import ProfileDropdown from "./ProfileDopdown";
 
-const Appbar = () => {
+const Appbar = (props) => {
+  const classNames = props.classNames ? " " + props.classNames : "";
   return (
-    <header className="home-page__header appbar">
+    <header className={"appbar" + classNames}>
       {/* menu */}
       <div className="appbar__section">
         <MenuButton />

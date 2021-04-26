@@ -14,7 +14,7 @@ import LinkTextButton from "../../Components/button/LinkTextButton";
 const Register = () => {
   return (
     <div className="register-page__body">
-      <Appbar />
+      <Appbar classNames="register-page__header" />
       <main className="register-page__main main">
         <section className="register-page__form">
           <h1 className="title">Register</h1>

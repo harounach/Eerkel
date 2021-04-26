@@ -11,7 +11,7 @@ import heroImage from "./Home-Illustration.svg";
 const Home = () => {
   return (
     <div className="home-page__body">
-      <Appbar />
+      <Appbar classNames="home-page__header" />
       <main className="home-page__main main">
         <section className="home-page__copy">
           {/* heading */}

@@ -14,7 +14,7 @@ import Button from "../../Components/button/Button";
 const Profile = () => {
   return (
     <div className="profile-page__body">
-      <Appbar />
+      <Appbar classNames="appbar--space-between profile-page__header" />
       <main className="profile-page__main main">
         <section className="profile-page__form">
           <h1 className="title">Profile</h1>

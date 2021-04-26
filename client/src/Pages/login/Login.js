@@ -14,7 +14,7 @@ import LinkTextButton from "../../Components/button/LinkTextButton";
 const Login = () => {
   return (
     <div className="login-page__body">
-      <Appbar />
+      <Appbar classNames="login-page__header" />
       <main className="login-page__main main">
         <section className="login-page__form">
           <h1 className="title">Login</h1>

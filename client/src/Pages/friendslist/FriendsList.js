@@ -53,7 +53,7 @@ const FriendsList = () => {
   return (
     <div className="friendslist-page__body">
       {/* appbar */}
-      <Appbar />
+      <Appbar classNames="appbar--space-between friendslist-page__header" />
 
       {/* main */}
       <main className="friendslist-page__main main">

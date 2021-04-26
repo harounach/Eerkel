@@ -9,10 +9,10 @@ const ProfileDopdown = () => {
         </div>
       </div>
       <div className="profile-dropdown__content">
-        <a href="#" className="profile-dropdown__link">
+        <a href="/profile" className="profile-dropdown__link">
           Profile
         </a>
-        <a href="#" className="profile-dropdown__link">
+        <a href="/logout" className="profile-dropdown__link">
           Logout
         </a>
       </div>
