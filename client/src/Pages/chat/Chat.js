@@ -155,7 +155,11 @@ const Chat = () => {
   return (
     <div className="chat-page__body">
       {/* appbar */}
-      <Appbar classNames="chat-page__header" />
+      <Appbar
+        classNames="chat-page__header"
+        hasMenu={true}
+        hasDropdown={true}
+      />
 
       {/* main */}
       <main className="chat-page__main main">

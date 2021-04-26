@@ -5,22 +5,28 @@ import ProfileDropdown from "./ProfileDopdown";
 
 const Appbar = (props) => {
   const classNames = props.classNames ? " " + props.classNames : "";
+  const logoSectionMargin = props.hasMenu ? " appbar__section--logo" : "";
   return (
     <header className={"appbar" + classNames}>
       {/* menu */}
-      <div className="appbar__section">
-        <MenuButton />
-      </div>
+      {props.hasMenu && (
+        <div className="appbar__section">
+          <MenuButton />
+        </div>
+      )}
 
       {/* logo */}
-      <div className="appbar__section appbar__section--logo">
+      <div className={"appbar__section" + logoSectionMargin}>
         <Logo />
       </div>
 
       {/* Profile dropdown */}
-      <div className="appbar__section appbar__section--right">
-        <ProfileDropdown />
-      </div>
+      {props.hasDropdown && (
+        <div className="appbar__section appbar__section--right">
+          <ProfileDropdown />
+        </div>
+      )}
+
       {/* appbar__scrim */}
       <div className="appbar__scrim"></div>
     </header>
