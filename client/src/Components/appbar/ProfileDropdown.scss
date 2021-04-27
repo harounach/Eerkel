@@ -1,7 +1,6 @@
-@use "../abstracts/variables";
-@use "../abstracts/mixins";
-@use "../base/typography";
-@use "../abstracts/animations" as anim;
+@use "../../sass/abstracts/variables";
+@use "../../sass/abstracts/mixins";
+@use "../../sass/base/typography";
 
 .profile-dropdown {
   display: flex;
