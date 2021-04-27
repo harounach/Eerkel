@@ -3,22 +3,6 @@
 @use "../base/typography";
 @use "../abstracts/animations" as anim;
 
-// logo
-.logo {
-  display: block;
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
-  text-decoration: none;
-  background-color: variables.$secondary-color;
-
-  // logo image
-  &__img {
-    width: 100%;
-    height: 100%;
-  }
-}
-
 .profile-dropdown {
   display: flex;
   justify-content: flex-end;

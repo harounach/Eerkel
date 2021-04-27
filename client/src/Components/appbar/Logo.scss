@@ -1,0 +1,17 @@
+@use "../../sass/abstracts/variables";
+
+// logo
+.logo {
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  text-decoration: none;
+  background-color: variables.$secondary-color;
+
+  // logo image
+  &__img {
+    width: 100%;
+    height: 100%;
+  }
+}
