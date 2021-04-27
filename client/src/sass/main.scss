@@ -4,8 +4,6 @@
 @use "./abstracts/placeholders";
 @use "./abstracts/animations";
 
-@use "./vendors/bootstrap";
-
 @use "./base/base";
 @use "./base/reset";
 @use "./base/typography";
@@ -17,6 +15,3 @@
 @use "./components/messages";
 @use "./components/chat-friends";
 @use "./components/hero";
-
-@use "./themes/theme";
-@use "./themes/admin";
