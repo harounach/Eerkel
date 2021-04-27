@@ -1,4 +1,7 @@
 import React from "react";
+
+import "./Home.scss";
+
 import Appbar from "../../Components/appbar/Appbar";
 import Footer from "../../Components/footer/Footer";
 
