@@ -1,5 +1,4 @@
 import React from "react";
-import "./Logo.scss";
 import appIcon from "./App-Icon.svg";
 
 const Logo = () => {
