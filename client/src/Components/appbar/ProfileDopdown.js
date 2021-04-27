@@ -1,5 +1,4 @@
 import React from "react";
-import "./ProfileDropdown.scss";
 
 const ProfileDopdown = () => {
   return (
