@@ -63,7 +63,7 @@ const Login = () => {
           </p>
         </section>
       </main>
-      <Footer />
+      <Footer classNames="login-page__footer" />
     </div>
   );
 };

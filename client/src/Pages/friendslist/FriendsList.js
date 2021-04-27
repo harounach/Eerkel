@@ -74,7 +74,7 @@ const FriendsList = () => {
       </main>
 
       {/* footer */}
-      <Footer />
+      <Footer classNames="friendslist-page__footer" />
     </div>
   );
 };

@@ -92,7 +92,7 @@ const Profile = () => {
           <Hero classNames="profile-page__hero" src={heroImage} />
         </section>
       </main>
-      <Footer />
+      <Footer classNames="profile-page__footer" />
     </div>
   );
 };

@@ -194,7 +194,7 @@ const Chat = () => {
       </main>
 
       {/* footer */}
-      <Footer />
+      <Footer classNames="chat-page__footer" />
     </div>
   );
 };

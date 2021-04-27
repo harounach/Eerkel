@@ -94,7 +94,7 @@ const Register = () => {
           </p>
         </section>
       </main>
-      <Footer />
+      <Footer classNames="register-page__footer" />
     </div>
   );
 };

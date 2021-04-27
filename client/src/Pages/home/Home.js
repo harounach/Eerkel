@@ -30,7 +30,7 @@ const Home = () => {
           <Hero src={heroImage} />
         </section>
       </main>
-      <Footer />
+      <Footer classNames="home-page__footer" />
     </div>
   );
 };
