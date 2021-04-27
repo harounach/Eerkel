@@ -1,4 +1,5 @@
 import React from "react";
+import "./Form.scss";
 
 const From = (props) => {
   const classNames = props.classNames ? " " + props.classNames : "";

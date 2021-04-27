@@ -2,67 +2,6 @@
 @use "../base/typography";
 @use "../abstracts/mixins";
 
-.form {
-  min-width: 300px;
-  background-color: variables.$surface-color;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  border-radius: 0.25rem;
-
-  // box-shadow
-  @include mixins.surface-shadow;
-
-  // form__section
-  &__section {
-    margin-bottom: 1rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
-
-  // form__label
-  &__label {
-    color: typography.$text-medium-color;
-  }
-
-  // form__input-control
-  &__input-control {
-    width: 100%;
-    height: 3rem;
-    border: 3px solid variables.$primary-color;
-    border-radius: 0.25rem;
-    padding-left: 0.5rem;
-
-    &:focus {
-      border-width: 4px;
-    }
-  }
-
-  // form__error
-  &__error {
-    margin: 0.5rem 0;
-    color: variables.$error-color;
-    display: none;
-    // form__error--show
-    &--show {
-      display: block;
-    }
-  }
-
-  // form__message
-  &__message {
-    font-size: 1.125rem;
-    font-weight: 600;
-    text-align: center;
-    color: typography.$text-high-color;
-    display: none;
-
-    // form__message--show
-    &--show {
-      display: block;
-    }
-  }
-}
-
 .seach-form {
   display: flex;
   margin: 0;
