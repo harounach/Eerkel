@@ -1,11 +1,11 @@
-@use "../../sass/abstracts/variables";
-@use "../../sass/abstracts/mixins";
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
 
-// profile-page
-.profile-page {
+// register-page
+.register-page {
   width: 100%;
   height: 100%;
-  // profile-page__body
+  // register-page__body
   &__body {
     width: 100%;
     height: 100%;
@@ -13,7 +13,7 @@
     flex-direction: column;
   }
 
-  // profile-page__header
+  // register-page__header
   &__header {
     flex-shrink: 0;
     position: fixed;
@@ -22,7 +22,7 @@
     @include mixins.z-index("appbar");
   }
 
-  // profile-page__main
+  // register-page__main
   &__main {
     width: 100%;
     margin: 3.5rem 0 0;
@@ -55,11 +55,11 @@
     }
   }
 
-  // profile-page__form
+  // register-page__form
   &__form {
     width: 100%;
     padding: 1rem;
-    margin: 0;
+    margin: 0rem;
 
     // tablet
     @include mixins.tablet {
@@ -80,26 +80,32 @@
     }
   }
 
-  // profile-page__btn-wrapper
+  // register-page__btn-wrapper
   &__btn-wrapper {
-    justify-content: space-between;
-  }
-
-  // profile-page__hero-wrapper
-  &__hero-wrapper {
-    width: 100%;
-    padding: 1rem;
+    justify-content: center;
 
     // tablet
     @include mixins.tablet {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
     }
   }
 
-  // profile-page__hero
+  // register-page__hero-wrapper
+  &__hero-wrapper {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    // tablet
+    @include mixins.tablet {
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+  }
+
+  // register-page__hero
   &__hero {
     display: none;
 
@@ -109,7 +115,7 @@
     }
   }
 
-  // profile-page__footer
+  // register-page__footer
   &__footer {
     margin-top: auto;
   }

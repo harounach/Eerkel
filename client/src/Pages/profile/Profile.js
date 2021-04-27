@@ -1,5 +1,4 @@
 import React from "react";
-import "./Profile.scss";
 import Appbar from "../../Components/appbar/Appbar";
 import Footer from "../../Components/footer/Footer";
 import Hero from "../../Components/hero/Hero";

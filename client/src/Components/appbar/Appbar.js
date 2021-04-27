@@ -1,5 +1,4 @@
 import React from "react";
-import "./Appbar.scss";
 import MenuButton from "./MenuButton";
 import Logo from "./Logo";
 import ProfileDropdown from "./ProfileDopdown";

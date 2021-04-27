@@ -1,11 +1,11 @@
-@use "../../sass/abstracts/variables";
-@use "../../sass/abstracts/mixins";
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
 
-// login-page
-.login-page {
+// profile-page
+.profile-page {
   width: 100%;
   height: 100%;
-  // login-page__body
+  // profile-page__body
   &__body {
     width: 100%;
     height: 100%;
@@ -13,7 +13,7 @@
     flex-direction: column;
   }
 
-  // login-page__header
+  // profile-page__header
   &__header {
     flex-shrink: 0;
     position: fixed;
@@ -22,7 +22,7 @@
     @include mixins.z-index("appbar");
   }
 
-  // login-page__main
+  // profile-page__main
   &__main {
     width: 100%;
     margin: 3.5rem 0 0;
@@ -55,19 +55,17 @@
     }
   }
 
-  // login-page__form
+  // profile-page__form
   &__form {
     width: 100%;
     padding: 1rem;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+    margin: 0;
 
     // tablet
     @include mixins.tablet {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      margin-top: 0;
     }
 
     // small-desktop
@@ -82,32 +80,26 @@
     }
   }
 
-  // login-page__btn-wrapper
+  // profile-page__btn-wrapper
   &__btn-wrapper {
-    justify-content: center;
-
-    // tablet
-    @include mixins.tablet {
-      justify-content: flex-start;
-    }
+    justify-content: space-between;
   }
 
-  // login-page__hero-wrapper
+  // profile-page__hero-wrapper
   &__hero-wrapper {
     width: 100%;
     padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 
     // tablet
     @include mixins.tablet {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       justify-content: center;
-      margin-top: 1.5rem;
     }
   }
 
-  // login-page__hero
+  // profile-page__hero
   &__hero {
     display: none;
 
@@ -117,7 +109,7 @@
     }
   }
 
-  // login-page__footer
+  // profile-page__footer
   &__footer {
     margin-top: auto;
   }

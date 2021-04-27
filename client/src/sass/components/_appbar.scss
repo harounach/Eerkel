@@ -1,7 +1,7 @@
-@use "../../sass/abstracts/variables";
-@use "../../sass/abstracts/mixins";
-@use "../../sass/abstracts/animations" as anim;
-@use "../../sass/base/typography";
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+@use "../abstracts/animations" as anim;
+@use "../base/typography";
 
 // appbar
 .appbar {

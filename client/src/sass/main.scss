@@ -13,5 +13,11 @@
 @use "./components/messages";
 @use "./components/chat-friends";
 @use "./components/hero";
+@use "./components/appbar";
 
-@use "./components/home-page";
+@use "./pages/home-page";
+@use "./pages/login-page";
+@use "./pages/register-page";
+@use "./pages/profile_page";
+@use "./pages/friendslist-page";
+@use "./pages/chat-page";

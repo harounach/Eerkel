@@ -1,11 +1,11 @@
-@use "../../sass/abstracts/variables";
-@use "../../sass/abstracts/mixins";
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
 
-// register-page
-.register-page {
+// login-page
+.login-page {
   width: 100%;
   height: 100%;
-  // register-page__body
+  // login-page__body
   &__body {
     width: 100%;
     height: 100%;
@@ -13,7 +13,7 @@
     flex-direction: column;
   }
 
-  // register-page__header
+  // login-page__header
   &__header {
     flex-shrink: 0;
     position: fixed;
@@ -22,7 +22,7 @@
     @include mixins.z-index("appbar");
   }
 
-  // register-page__main
+  // login-page__main
   &__main {
     width: 100%;
     margin: 3.5rem 0 0;
@@ -55,17 +55,19 @@
     }
   }
 
-  // register-page__form
+  // login-page__form
   &__form {
     width: 100%;
     padding: 1rem;
-    margin: 0rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
 
     // tablet
     @include mixins.tablet {
       display: flex;
       flex-direction: column;
       justify-content: center;
+      margin-top: 0;
     }
 
     // small-desktop
@@ -80,7 +82,7 @@
     }
   }
 
-  // register-page__btn-wrapper
+  // login-page__btn-wrapper
   &__btn-wrapper {
     justify-content: center;
 
@@ -90,7 +92,7 @@
     }
   }
 
-  // register-page__hero-wrapper
+  // login-page__hero-wrapper
   &__hero-wrapper {
     width: 100%;
     padding: 1rem;
@@ -105,7 +107,7 @@
     }
   }
 
-  // register-page__hero
+  // login-page__hero
   &__hero {
     display: none;
 
@@ -115,7 +117,7 @@
     }
   }
 
-  // register-page__footer
+  // login-page__footer
   &__footer {
     margin-top: auto;
   }
