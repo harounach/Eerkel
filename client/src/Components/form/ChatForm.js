@@ -1,4 +1,5 @@
 import React from "react";
+import "./ChatForm.scss";
 import Button from "../button/Button";
 import BtnIcon from "../button/BtnIcon";
 

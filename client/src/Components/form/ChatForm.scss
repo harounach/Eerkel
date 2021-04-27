@@ -1,11 +1,10 @@
-@use "../abstracts/variables";
-@use "../base/typography";
-@use "../abstracts/mixins";
+@use "../../sass/abstracts/variables";
+@use "../../sass/abstracts/mixins";
 
 // chat-from
 .chat-form {
   display: flex;
-  margin: 0;
+  // margin: 0;
   padding: 0.5rem;
   background-color: variables.$surface-color;
   @include mixins.bottom-shadow;
