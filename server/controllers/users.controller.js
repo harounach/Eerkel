@@ -5,12 +5,12 @@ const passwordUtils = require("../utils/passwordUtils");
 
 const { body, validationResult } = require("express-validator");
 
-// Improved Sign In endpoint
-exports.signinImproved = [
+// Login endpoint
+exports.login = [
   // Validate and sanitize fields.
 
   // Validate & sanitize username
-  body("email", "Email must not be empty.").trim().isEmail().escape(),
+  body("email", "Email is invalid.").trim().isEmail().escape(),
   // Validate & sanitize password
   body("password", "Password must be 6-15 characters long")
     .trim()
@@ -23,11 +23,11 @@ exports.signinImproved = [
 
     // Data is invalid
     if (!errors.isEmpty()) {
-      res.json(errors);
+      res.json(errors.array());
     } else {
       // Data is valid, sign the user in
 
-      res.json({ message: "Congratulations! you are signin" });
+      res.json({ message: "Congratulations! you are logged in" });
     }
   },
 
@@ -35,44 +35,44 @@ exports.signinImproved = [
 ];
 
 // Sign In endpoint
-exports.signin = function (req, res, next) {
-  let userObj = {};
-  const errors = [];
+// exports.signin = function (req, res, next) {
+//   let userObj = {};
+//   const errors = [];
 
-  const { email, password } = req.body;
+//   const { email, password } = req.body;
 
-  // 01- check email is not null
-  // 02- check password is not null
-  // 03- validate email
-  // 04- validate password
+//   // 01- check email is not null
+//   // 02- check password is not null
+//   // 03- validate email
+//   // 04- validate password
 
-  if (!email) {
-    errors.push("Email is required");
-  }
+//   if (!email) {
+//     errors.push("Email is required");
+//   }
 
-  if (!password) {
-    errors.push("Password is required");
-  }
+//   if (!password) {
+//     errors.push("Password is required");
+//   }
 
-  if (!validator.isEmail(email)) {
-    errors.push("Invalid Email");
-  }
+//   if (!validator.isEmail(email)) {
+//     errors.push("Invalid Email");
+//   }
 
-  if (!(password.length >= 6 && password.length <= 15)) {
-    errors.push("Password must be 6-15 characters long");
-  }
+//   if (!(password.length >= 6 && password.length <= 15)) {
+//     errors.push("Password must be 6-15 characters long");
+//   }
 
-  if (errors.length > 0) {
-    res.send({ error: errors });
-  } else {
-    userObj["email"] = email;
-    userObj["password"] = password;
-    res.json({ message: "Congratulations! user are signin" });
-  }
-};
+//   if (errors.length > 0) {
+//     res.send({ error: errors });
+//   } else {
+//     userObj["email"] = email;
+//     userObj["password"] = password;
+//     res.json({ message: "Congratulations! user are signin" });
+//   }
+// };
 
-// Sign Up endpoint
-exports.signup = [
+// Register endpoint
+exports.register = [
   // Validate and sanitize fields.
 
   // Validate & sanitize username
@@ -143,8 +143,8 @@ exports.signup = [
   },
 ];
 
-// Sign Out endpoint
-exports.signout = function (req, res, next) {
+// Logout endpoint
+exports.logout = function (req, res, next) {
   // Sign the user out and redirect to welocme home page
   res.json({ message: "Signed out!" });
 };

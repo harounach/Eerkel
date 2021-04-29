@@ -2,11 +2,11 @@ const { Router } = require("express");
 const router = Router();
 const usersController = require("../controllers/users.controller");
 
-router.route("/signin").post(usersController.signinImproved);
+router.route("/login").post(usersController.login);
 
-router.route("/signup").post(usersController.signup);
+router.route("/register").post(usersController.register);
 
-router.route("/signout").post(usersController.signout);
+router.route("/logout").post(usersController.logout);
 
 router.route("/updateAccount").get(usersController.updateAccount);
 

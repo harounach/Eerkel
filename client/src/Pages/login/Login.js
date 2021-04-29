@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Appbar from "../../Components/appbar/Appbar";
 import Footer from "../../Components/footer/Footer";
@@ -12,10 +12,14 @@ import LinkTextButton from "../../Components/button/LinkTextButton";
 import ChatApi from "../../api/ChatApi";
 
 const Login = (props) => {
+  // login state
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   const submitHandler = function (evt) {
     evt.preventDefault();
     console.log("data submitted!");
-    ChatApi.login("", "fsfdfsdf")
+    ChatApi.login(email, password)
       .then((response) => console.log(response.data))
       .catch((err) => console.log(err));
   };
@@ -36,6 +40,8 @@ const Login = (props) => {
                 id="email"
                 type="text"
                 name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
               <p className="form__error form__error--email">Email is invalid</p>
             </div>
@@ -49,6 +55,8 @@ const Login = (props) => {
                 id="password"
                 type="password"
                 name="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
               <p className="form__error form__error--password">
                 Password is invalid
