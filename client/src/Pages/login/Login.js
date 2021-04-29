@@ -5,22 +5,29 @@ import Footer from "../../Components/footer/Footer";
 import Hero from "../../Components/hero/Hero";
 import heroImage from "./Auth-Illustration.svg";
 
-import Form from "../../Components/form/From";
-import FormSection from "../../Components/form/FormSection";
-
 import ButtonWrapper from "../../Components/button/ButtonWrapper";
 import Button from "../../Components/button/Button";
 import LinkTextButton from "../../Components/button/LinkTextButton";
 
-const Login = () => {
+import ChatApi from "../../api/ChatApi";
+
+const Login = (props) => {
+  const submitHandler = function (evt) {
+    evt.preventDefault();
+    console.log("data submitted!");
+    ChatApi.login("", "fsfdfsdf")
+      .then((response) => console.log(response.data))
+      .catch((err) => console.log(err));
+  };
+
   return (
     <div className="login-page__body">
       <Appbar classNames="login-page__header" />
       <main className="login-page__main main">
         <section className="login-page__form">
           <h1 className="title">Login</h1>
-          <Form>
-            <FormSection>
+          <form className="form" onSubmit={submitHandler}>
+            <div className="form__section">
               <label className="form__label" htmlFor="email">
                 Email
               </label>
@@ -31,9 +38,9 @@ const Login = () => {
                 name="email"
               />
               <p className="form__error form__error--email">Email is invalid</p>
-            </FormSection>
+            </div>
 
-            <FormSection>
+            <div className="form__section">
               <label className="form__label" htmlFor="password">
                 Password
               </label>
@@ -46,14 +53,14 @@ const Login = () => {
               <p className="form__error form__error--password">
                 Password is invalid
               </p>
-            </FormSection>
+            </div>
 
-            <FormSection>
+            <div className="form__section">
               <ButtonWrapper classNames="login-page__btn-wrapper">
                 <Button>Login</Button>
               </ButtonWrapper>
-            </FormSection>
-          </Form>
+            </div>
+          </form>
         </section>
         <section className="login-page__hero-wrapper">
           {/* hero */}
