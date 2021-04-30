@@ -10,6 +10,7 @@ import Button from "../../Components/button/Button";
 import LinkTextButton from "../../Components/button/LinkTextButton";
 
 import ChatApi from "../../api/ChatApi";
+import FormUtils from "../../utils/FormUtils";
 
 /**
  * @typedef {Object} ErrorEntry
@@ -20,20 +21,23 @@ import ChatApi from "../../api/ChatApi";
  */
 
 const Login = (props) => {
-  // login state
+  // login states
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [emailError, setEmailError] = useState("");
-  const [passwordError, setPasswordError] = useState("");
-  const emailErrorClass = emailError ? " form__error--show" : "";
-  const passwordErrorClass = passwordError ? " form__error--show" : "";
+  const [emailErrorMessage, setEmailErrorMessage] = useState("");
+  const [passwordErrorMessage, setPasswordErrorMessage] = useState("");
 
+  /**
+   * Submit login data when clicking login button
+   */
   const submitHandler = function (evt) {
     evt.preventDefault();
     console.log("data submitted!");
     ChatApi.login(email, password)
       .then((response) => {
-        if (hasError(response.data)) {
+        FormUtils.hasError(response.data);
+        if (FormUtils.hasError(response.data)) {
+          resetErrors();
           handleErrors(response.data["errors"]);
         } else {
           resetErrors();
@@ -42,14 +46,12 @@ const Login = (props) => {
       .catch((err) => console.log(err));
   };
 
-  /* Check if this is errors data  */
-  const hasError = function (data) {
-    return data.hasOwnProperty("errors");
-  };
-
+  /**
+   * Reset error messages
+   */
   const resetErrors = function () {
-    setEmailError("");
-    setPasswordError("");
+    setEmailErrorMessage("");
+    setPasswordErrorMessage("");
   };
 
   /**
@@ -59,10 +61,10 @@ const Login = (props) => {
   const handleErrors = function (errorsData) {
     errorsData.forEach((errorEntry) => {
       if (errorEntry.param === "email") {
-        setEmailError(errorEntry.msg);
+        setEmailErrorMessage(errorEntry.msg);
       }
       if (errorEntry.param === "password") {
-        setPasswordError(errorEntry.msg);
+        setPasswordErrorMessage(errorEntry.msg);
       }
     });
   };
@@ -86,8 +88,13 @@ const Login = (props) => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
-              <p className={"form__error form__error--email" + emailErrorClass}>
-                {emailError}
+              <p
+                className={
+                  "form__error form__error--email" +
+                  FormUtils.toggleErrorClass(emailErrorMessage)
+                }
+              >
+                {emailErrorMessage}
               </p>
             </div>
 
@@ -105,10 +112,11 @@ const Login = (props) => {
               />
               <p
                 className={
-                  "form__error form__error--password" + passwordErrorClass
+                  "form__error form__error--password" +
+                  FormUtils.toggleErrorClass(passwordErrorMessage)
                 }
               >
-                {passwordError}
+                {passwordErrorMessage}
               </p>
             </div>
 

@@ -88,7 +88,7 @@ exports.register = [
     .isLength({ min: 6, max: 15 })
     .escape(),
   // Validate passwordConfirmation
-  body("passwordConfirmation").custom((passwordConfirmation, { req }) => {
+  body("passwordConfirm").custom((passwordConfirmation, { req }) => {
     const { password } = req.body;
     if (passwordConfirmation !== password) {
       throw new Error("Password confirmation does not match password");
@@ -116,29 +116,30 @@ exports.register = [
       res.json(errors);
     } else {
       // Data is valid, create the user in the database
+      res.json({ message: "User created successfuly" });
 
-      const { username, email, password } = req.body;
+      // const { username, email, password } = req.body;
 
-      const userObj = {};
-      userObj["username"] = username;
-      userObj["email"] = email;
-      userObj["password"] = password;
+      // const userObj = {};
+      // userObj["username"] = username;
+      // userObj["email"] = email;
+      // userObj["password"] = password;
 
-      // Hash the password
-      passwordUtils
-        .hashPassword(password)
-        .then((hashedPassword) => {
-          // add the user to the database
-          userObj["password"] = hashedPassword;
-          return usersDAO.createUser(userObj);
-        })
-        .then((newUser) => {
-          res.json({ message: "User created successfully" });
-        })
-        .catch((err) => {
-          console.error(err);
-          res.json({ error: "Server error" });
-        });
+      // // Hash the password
+      // passwordUtils
+      //   .hashPassword(password)
+      //   .then((hashedPassword) => {
+      //     // add the user to the database
+      //     userObj["password"] = hashedPassword;
+      //     return usersDAO.createUser(userObj);
+      //   })
+      //   .then((newUser) => {
+      //     res.json({ message: "User created successfully" });
+      //   })
+      //   .catch((err) => {
+      //     console.error(err);
+      //     res.json({ error: "Server error" });
+      //   });
     }
   },
 ];
