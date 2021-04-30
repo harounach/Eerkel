@@ -11,17 +11,60 @@ import LinkTextButton from "../../Components/button/LinkTextButton";
 
 import ChatApi from "../../api/ChatApi";
 
+/**
+ * @typedef {Object} ErrorEntry
+ * @property {string} msg
+ * @property {string} location
+ * @property {string} param
+ * @property {string} value
+ */
+
 const Login = (props) => {
   // login state
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+  const emailErrorClass = emailError ? " form__error--show" : "";
+  const passwordErrorClass = passwordError ? " form__error--show" : "";
 
   const submitHandler = function (evt) {
     evt.preventDefault();
     console.log("data submitted!");
     ChatApi.login(email, password)
-      .then((response) => console.log(response.data))
+      .then((response) => {
+        if (hasError(response.data)) {
+          handleErrors(response.data["errors"]);
+        } else {
+          resetErrors();
+        }
+      })
       .catch((err) => console.log(err));
+  };
+
+  /* Check if this is errors data  */
+  const hasError = function (data) {
+    return data.hasOwnProperty("errors");
+  };
+
+  const resetErrors = function () {
+    setEmailError("");
+    setPasswordError("");
+  };
+
+  /**
+   * Extract errors
+   * @param {Array<ErrorEntry>} errorsData
+   */
+  const handleErrors = function (errorsData) {
+    errorsData.forEach((errorEntry) => {
+      if (errorEntry.param === "email") {
+        setEmailError(errorEntry.msg);
+      }
+      if (errorEntry.param === "password") {
+        setPasswordError(errorEntry.msg);
+      }
+    });
   };
 
   return (
@@ -43,7 +86,9 @@ const Login = (props) => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
-              <p className="form__error form__error--email">Email is invalid</p>
+              <p className={"form__error form__error--email" + emailErrorClass}>
+                {emailError}
+              </p>
             </div>
 
             <div className="form__section">
@@ -58,8 +103,12 @@ const Login = (props) => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <p className="form__error form__error--password">
-                Password is invalid
+              <p
+                className={
+                  "form__error form__error--password" + passwordErrorClass
+                }
+              >
+                {passwordError}
               </p>
             </div>
 

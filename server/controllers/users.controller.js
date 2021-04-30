@@ -23,7 +23,7 @@ exports.login = [
 
     // Data is invalid
     if (!errors.isEmpty()) {
-      res.json(errors.array());
+      res.json(errors);
     } else {
       // Data is valid, sign the user in
 
