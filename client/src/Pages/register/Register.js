@@ -9,6 +9,7 @@ import Button from "../../Components/button/Button";
 import LinkTextButton from "../../Components/button/LinkTextButton";
 
 import ChatApi from "../../api/ChatApi";
+import FormUtils from "../../utils/FormUtils";
 
 /**
  * @typedef {Object} ErrorEntry
@@ -24,13 +25,65 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirm, setPasswordConfirm] = useState("");
-  const [usernameError, setUsernameError] = useState("");
-  const [emailError, setEmailError] = useState("");
-  const [passwordError, setPasswordError] = useState("");
-  const [passwordConfirmError, setPasswordConfirmError] = useState("");
-  const usernameErrorClass = usernameError ? " form__error--show" : "";
-  const emailErrorClass = emailError ? " form__error--show" : "";
-  const passwordErrorClass = passwordError ? " form__error--show" : "";
+  const [usernameErrorMessage, setUsernameErrorMessage] = useState("");
+  const [emailErrorMessage, setEmailErrorMessage] = useState("");
+  const [passwordErrorMessage, setPasswordErrorMessage] = useState("");
+  const [
+    passwordConfirmErrorMessage,
+    setPasswordConfirmErrorMessage,
+  ] = useState("");
+
+  /**
+   * Submit register data when clicking register button
+   */
+  const submitHandler = function (evt) {
+    evt.preventDefault();
+    console.log("data submitted!");
+    ChatApi.register(username, email, password, passwordConfirm)
+      .then((response) => {
+        console.log(response.data);
+        FormUtils.hasError(response.data);
+        if (FormUtils.hasError(response.data)) {
+          resetErrors();
+          handleErrors(response.data["errors"]);
+        } else {
+          resetErrors();
+          /* TODO: handle login */
+        }
+      })
+      .catch((err) => console.log(err));
+  };
+
+  /**
+   * Reset error messages
+   */
+  const resetErrors = function () {
+    setUsernameErrorMessage("");
+    setEmailErrorMessage("");
+    setPasswordErrorMessage("");
+    setPasswordConfirmErrorMessage("");
+  };
+
+  /**
+   * Extract errors
+   * @param {Array<ErrorEntry>} errorsData
+   */
+  const handleErrors = function (errorsData) {
+    errorsData.forEach((errorEntry) => {
+      if (errorEntry.param === "username") {
+        setUsernameErrorMessage(errorEntry.msg);
+      }
+      if (errorEntry.param === "email") {
+        setEmailErrorMessage(errorEntry.msg);
+      }
+      if (errorEntry.param === "password") {
+        setPasswordErrorMessage(errorEntry.msg);
+      }
+      if (errorEntry.param === "passwordConfirm") {
+        setPasswordConfirmErrorMessage(errorEntry.msg);
+      }
+    });
+  };
 
   return (
     <div className="register-page__body">
@@ -38,7 +91,7 @@ const Register = () => {
       <main className="register-page__main main">
         <section className="register-page__form">
           <h1 className="title">Register</h1>
-          <form className="form">
+          <form className="form" onSubmit={submitHandler}>
             <div className="form__section">
               <label className="form__label" htmlFor="username">
                 Username
@@ -48,9 +101,16 @@ const Register = () => {
                 id="username"
                 type="text"
                 name="username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
               />
-              <p className="form__error form__error--username">
-                Username is invalid
+              <p
+                className={
+                  "form__error form__error--username" +
+                  FormUtils.toggleErrorClass(usernameErrorMessage)
+                }
+              >
+                {usernameErrorMessage}
               </p>
             </div>
 
@@ -63,8 +123,17 @@ const Register = () => {
                 id="email"
                 type="text"
                 name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
-              <p className="form__error form__error--email">Email is invalid</p>
+              <p
+                className={
+                  "form__error form__error--email" +
+                  FormUtils.toggleErrorClass(emailErrorMessage)
+                }
+              >
+                {emailErrorMessage}
+              </p>
             </div>
 
             <div className="form__section">
@@ -76,9 +145,16 @@ const Register = () => {
                 id="password"
                 type="password"
                 name="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
-              <p className="form__error form__error--password">
-                Password is invalid
+              <p
+                className={
+                  "form__error form__error--password" +
+                  FormUtils.toggleErrorClass(passwordErrorMessage)
+                }
+              >
+                {passwordErrorMessage}
               </p>
             </div>
 
@@ -91,9 +167,16 @@ const Register = () => {
                 id="passwordConfirm"
                 type="password"
                 name="passwordConfirm"
+                value={passwordConfirm}
+                onChange={(e) => setPasswordConfirm(e.target.value)}
               />
-              <p className="form__error form__error--passwordConfirm">
-                password Confirmation is invalid
+              <p
+                className={
+                  "form__error form__error--passwordConfirm" +
+                  FormUtils.toggleErrorClass(passwordConfirmErrorMessage)
+                }
+              >
+                {passwordConfirmErrorMessage}
               </p>
             </div>
 

@@ -2,7 +2,7 @@ import axios from "axios";
 
 const serverUrl = "http://localhost:5000";
 const loginUrl = `${serverUrl}/api/v1/user/login`;
-const registerUrl = `${EvalError}/api/v1/user/register`;
+const registerUrl = `${serverUrl}/api/v1/user/register`;
 
 const ChatApi = {
   /**

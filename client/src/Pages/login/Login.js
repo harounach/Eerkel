@@ -41,6 +41,7 @@ const Login = (props) => {
           handleErrors(response.data["errors"]);
         } else {
           resetErrors();
+          /* TODO: handle register */
         }
       })
       .catch((err) => console.log(err));

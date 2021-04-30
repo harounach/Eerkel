@@ -10,7 +10,7 @@ exports.login = [
   // Validate and sanitize fields.
 
   // Validate & sanitize username
-  body("email", "Email is invalid.").trim().isEmail().escape(),
+  body("email", "Email is invalid").trim().isEmail().escape(),
   // Validate & sanitize password
   body("password", "Password must be 6-15 characters long")
     .trim()
@@ -76,12 +76,12 @@ exports.register = [
   // Validate and sanitize fields.
 
   // Validate & sanitize username
-  body("username", "Username must not be empty.")
+  body("username", "Username must be more than 4 characters long")
     .trim()
     .isLength({ min: 4 })
     .escape(),
   // Validate & sanitize email
-  body("email", "Email must not be empty.").trim().isEmail().escape(),
+  body("email", "Email is invalid").trim().isEmail().escape(),
   // Validate & sanitize password
   body("password", "Password must be 6-15 characters long")
     .trim()
